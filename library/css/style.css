@@ -137,8 +137,8 @@ em,
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
   height: 0; }
 
 /*
@@ -147,8 +147,8 @@ hr {
 p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto; }
+  -moz-hyphens: auto;
+  hyphens: auto; }
 
 /*
  * Addresses margins set differently in IE6/7.
@@ -347,8 +347,7 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -361,6 +360,7 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
@@ -403,6 +403,7 @@ table {
 
 * {
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
@@ -500,8 +501,8 @@ p {
   word-break: normal;
   word-wrap: normal;
   -webkit-hyphens: none;
-  -ms-hyphens: none;
-      hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3; }
@@ -603,8 +604,7 @@ probably best not to use it. I mean, were you going to anyway? */
   padding-left: 2rem; }
 
 .row {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -658,8 +658,7 @@ probably best not to use it. I mean, were you going to anyway? */
 .col-xs-offset-10,
 .col-xs-offset-11,
 .col-xs-offset-12 {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -825,6 +824,7 @@ probably best not to use it. I mean, were you going to anyway? */
 @media only screen and (min-width: 48em) {
   .container {
     width: 49rem; }
+
   .col-sm,
   .col-sm-1,
   .col-sm-2,
@@ -851,13 +851,13 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-sm-offset-10,
   .col-sm-offset-11,
   .col-sm-offset-12 {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     padding-right: 0.5rem;
     padding-left: 0.5rem; }
+
   .col-sm {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -865,124 +865,158 @@ probably best not to use it. I mean, were you going to anyway? */
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
     max-width: 100%; }
+
   .col-sm-1 {
     -ms-flex-preferred-size: 8.33333333%;
     flex-basis: 8.33333333%;
     max-width: 8.33333333%; }
+
   .col-sm-2 {
     -ms-flex-preferred-size: 16.66666667%;
     flex-basis: 16.66666667%;
     max-width: 16.66666667%; }
+
   .col-sm-3 {
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
     max-width: 25%; }
+
   .col-sm-4 {
     -ms-flex-preferred-size: 33.33333333%;
     flex-basis: 33.33333333%;
     max-width: 33.33333333%; }
+
   .col-sm-5 {
     -ms-flex-preferred-size: 41.66666667%;
     flex-basis: 41.66666667%;
     max-width: 41.66666667%; }
+
   .col-sm-6 {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
     max-width: 50%; }
+
   .col-sm-7 {
     -ms-flex-preferred-size: 58.33333333%;
     flex-basis: 58.33333333%;
     max-width: 58.33333333%; }
+
   .col-sm-8 {
     -ms-flex-preferred-size: 66.66666667%;
     flex-basis: 66.66666667%;
     max-width: 66.66666667%; }
+
   .col-sm-9 {
     -ms-flex-preferred-size: 75%;
     flex-basis: 75%;
     max-width: 75%; }
+
   .col-sm-10 {
     -ms-flex-preferred-size: 83.33333333%;
     flex-basis: 83.33333333%;
     max-width: 83.33333333%; }
+
   .col-sm-11 {
     -ms-flex-preferred-size: 91.66666667%;
     flex-basis: 91.66666667%;
     max-width: 91.66666667%; }
+
   .col-sm-12 {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     max-width: 100%; }
+
   .col-sm-offset-0 {
     margin-left: 0; }
+
   .col-sm-offset-1 {
     margin-left: 8.33333333%; }
+
   .col-sm-offset-2 {
     margin-left: 16.66666667%; }
+
   .col-sm-offset-3 {
     margin-left: 25%; }
+
   .col-sm-offset-4 {
     margin-left: 33.33333333%; }
+
   .col-sm-offset-5 {
     margin-left: 41.66666667%; }
+
   .col-sm-offset-6 {
     margin-left: 50%; }
+
   .col-sm-offset-7 {
     margin-left: 58.33333333%; }
+
   .col-sm-offset-8 {
     margin-left: 66.66666667%; }
+
   .col-sm-offset-9 {
     margin-left: 75%; }
+
   .col-sm-offset-10 {
     margin-left: 83.33333333%; }
+
   .col-sm-offset-11 {
     margin-left: 91.66666667%; }
+
   .start-sm {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
     text-align: start; }
+
   .center-sm {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     text-align: center; }
+
   .end-sm {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
     text-align: end; }
+
   .top-sm {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start; }
+
   .middle-sm {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
+
   .bottom-sm {
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: flex-end; }
+
   .around-sm {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
+
   .between-sm {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+
   .first-sm {
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1; }
+
   .last-sm {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1; } }
-
 @media only screen and (min-width: 64em) {
   .container {
     width: 65rem; }
+
   .col-md,
   .col-md-1,
   .col-md-2,
@@ -1009,13 +1043,13 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-md-offset-10,
   .col-md-offset-11,
   .col-md-offset-12 {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     padding-right: 0.5rem;
     padding-left: 0.5rem; }
+
   .col-md {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -1023,124 +1057,158 @@ probably best not to use it. I mean, were you going to anyway? */
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
     max-width: 100%; }
+
   .col-md-1 {
     -ms-flex-preferred-size: 8.33333333%;
     flex-basis: 8.33333333%;
     max-width: 8.33333333%; }
+
   .col-md-2 {
     -ms-flex-preferred-size: 16.66666667%;
     flex-basis: 16.66666667%;
     max-width: 16.66666667%; }
+
   .col-md-3 {
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
     max-width: 25%; }
+
   .col-md-4 {
     -ms-flex-preferred-size: 33.33333333%;
     flex-basis: 33.33333333%;
     max-width: 33.33333333%; }
+
   .col-md-5 {
     -ms-flex-preferred-size: 41.66666667%;
     flex-basis: 41.66666667%;
     max-width: 41.66666667%; }
+
   .col-md-6 {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
     max-width: 50%; }
+
   .col-md-7 {
     -ms-flex-preferred-size: 58.33333333%;
     flex-basis: 58.33333333%;
     max-width: 58.33333333%; }
+
   .col-md-8 {
     -ms-flex-preferred-size: 66.66666667%;
     flex-basis: 66.66666667%;
     max-width: 66.66666667%; }
+
   .col-md-9 {
     -ms-flex-preferred-size: 75%;
     flex-basis: 75%;
     max-width: 75%; }
+
   .col-md-10 {
     -ms-flex-preferred-size: 83.33333333%;
     flex-basis: 83.33333333%;
     max-width: 83.33333333%; }
+
   .col-md-11 {
     -ms-flex-preferred-size: 91.66666667%;
     flex-basis: 91.66666667%;
     max-width: 91.66666667%; }
+
   .col-md-12 {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     max-width: 100%; }
+
   .col-md-offset-0 {
     margin-left: 0; }
+
   .col-md-offset-1 {
     margin-left: 8.33333333%; }
+
   .col-md-offset-2 {
     margin-left: 16.66666667%; }
+
   .col-md-offset-3 {
     margin-left: 25%; }
+
   .col-md-offset-4 {
     margin-left: 33.33333333%; }
+
   .col-md-offset-5 {
     margin-left: 41.66666667%; }
+
   .col-md-offset-6 {
     margin-left: 50%; }
+
   .col-md-offset-7 {
     margin-left: 58.33333333%; }
+
   .col-md-offset-8 {
     margin-left: 66.66666667%; }
+
   .col-md-offset-9 {
     margin-left: 75%; }
+
   .col-md-offset-10 {
     margin-left: 83.33333333%; }
+
   .col-md-offset-11 {
     margin-left: 91.66666667%; }
+
   .start-md {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
     text-align: start; }
+
   .center-md {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     text-align: center; }
+
   .end-md {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
     text-align: end; }
+
   .top-md {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start; }
+
   .middle-md {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
+
   .bottom-md {
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: flex-end; }
+
   .around-md {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
+
   .between-md {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+
   .first-md {
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1; }
+
   .last-md {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1; } }
-
 @media only screen and (min-width: 75em) {
   .container {
     width: 76rem; }
+
   .col-lg,
   .col-lg-1,
   .col-lg-2,
@@ -1167,13 +1235,13 @@ probably best not to use it. I mean, were you going to anyway? */
   .col-lg-offset-10,
   .col-lg-offset-11,
   .col-lg-offset-12 {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     padding-right: 0.5rem;
     padding-left: 0.5rem; }
+
   .col-lg {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -1181,121 +1249,154 @@ probably best not to use it. I mean, were you going to anyway? */
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
     max-width: 100%; }
+
   .col-lg-1 {
     -ms-flex-preferred-size: 8.33333333%;
     flex-basis: 8.33333333%;
     max-width: 8.33333333%; }
+
   .col-lg-2 {
     -ms-flex-preferred-size: 16.66666667%;
     flex-basis: 16.66666667%;
     max-width: 16.66666667%; }
+
   .col-lg-3 {
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
     max-width: 25%; }
+
   .col-lg-4 {
     -ms-flex-preferred-size: 33.33333333%;
     flex-basis: 33.33333333%;
     max-width: 33.33333333%; }
+
   .col-lg-5 {
     -ms-flex-preferred-size: 41.66666667%;
     flex-basis: 41.66666667%;
     max-width: 41.66666667%; }
+
   .col-lg-6 {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
     max-width: 50%; }
+
   .col-lg-7 {
     -ms-flex-preferred-size: 58.33333333%;
     flex-basis: 58.33333333%;
     max-width: 58.33333333%; }
+
   .col-lg-8 {
     -ms-flex-preferred-size: 66.66666667%;
     flex-basis: 66.66666667%;
     max-width: 66.66666667%; }
+
   .col-lg-9 {
     -ms-flex-preferred-size: 75%;
     flex-basis: 75%;
     max-width: 75%; }
+
   .col-lg-10 {
     -ms-flex-preferred-size: 83.33333333%;
     flex-basis: 83.33333333%;
     max-width: 83.33333333%; }
+
   .col-lg-11 {
     -ms-flex-preferred-size: 91.66666667%;
     flex-basis: 91.66666667%;
     max-width: 91.66666667%; }
+
   .col-lg-12 {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     max-width: 100%; }
+
   .col-lg-offset-0 {
     margin-left: 0; }
+
   .col-lg-offset-1 {
     margin-left: 8.33333333%; }
+
   .col-lg-offset-2 {
     margin-left: 16.66666667%; }
+
   .col-lg-offset-3 {
     margin-left: 25%; }
+
   .col-lg-offset-4 {
     margin-left: 33.33333333%; }
+
   .col-lg-offset-5 {
     margin-left: 41.66666667%; }
+
   .col-lg-offset-6 {
     margin-left: 50%; }
+
   .col-lg-offset-7 {
     margin-left: 58.33333333%; }
+
   .col-lg-offset-8 {
     margin-left: 66.66666667%; }
+
   .col-lg-offset-9 {
     margin-left: 75%; }
+
   .col-lg-offset-10 {
     margin-left: 83.33333333%; }
+
   .col-lg-offset-11 {
     margin-left: 91.66666667%; }
+
   .start-lg {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
     text-align: start; }
+
   .center-lg {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     text-align: center; }
+
   .end-lg {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
     text-align: end; }
+
   .top-lg {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start; }
+
   .middle-lg {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
+
   .bottom-lg {
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: flex-end; }
+
   .around-lg {
     -ms-flex-pack: distribute;
     justify-content: space-around; }
+
   .between-lg {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+
   .first-lg {
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1; }
+
   .last-lg {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1; } }
-
 /*********************
 IMPORTING MODULES
 *********************/
@@ -1357,7 +1458,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .accent-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 0.9em;
@@ -1435,12 +1536,11 @@ textarea,
   color: #5c6b80;
   border-radius: 3px;
   vertical-align: middle;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border: 0;
   width: 100%;
   max-width: 400px;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #f7f8fa;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
@@ -1686,7 +1786,7 @@ BASE (MOBILE) SIZE
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -1698,20 +1798,13 @@ img {
   image-rendering: auto; }
 
 #inner-header, #inner-footer {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  flex-direction: column; }
 
 #inner-footer .nav {
   opacity: 1;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   height: auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap; }
   #inner-footer .nav li {
     border-bottom: 0px; }
 
@@ -1765,18 +1858,18 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #2980b9;
+  color: #A69E3F;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #216693; }
+    color: #857e32; }
   a:link, a:visited:link {
     /*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
+    this highlights links on iPhones/iPads.
+    so it basically works like the :hover selector
+    for mobile devices.
+    */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
 /******************************************************************
@@ -1786,21 +1879,23 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
+  if you're going to use webfonts, be sure to check your weights
+  http://css-tricks.com/watch-your-font-weight/
+  */
   /* removing text decoration from all headline links */ }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
     text-decoration: none; }
 
 h1, .h1 {
   font-size: 2.5em;
-  line-height: 1.333em; }
+  line-height: 1.333em;
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 h2, .h2 {
   font-size: 1.75em;
   line-height: 1.4em;
-  margin-bottom: 0.375em; }
+  margin-bottom: 0.375em;
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 h3, .h3 {
   font-size: 1.125em; }
@@ -1841,50 +1936,40 @@ and more scalable.
   text-align: center;
   margin-bottom: 1em;
   margin-top: -2em;
-  -webkit-transition: all .5s;
   transition: all .5s; }
   #mobile-nav.show {
     margin-top: 0em;
     padding: .5em;
     background-color: white; }
     #mobile-nav.show .fa-chevron-down {
-      -webkit-transform: rotate(180deg);
-              transform: rotate(180deg); }
+      transform: rotate(180deg); }
 
 .nav {
   border-bottom: 0;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   opacity: 0;
   display: none;
   height: 0;
-  -webkit-transition: all .5s;
   transition: all .5s;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
   .nav.show {
     opacity: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     height: 100%; }
   .nav li {
     border-bottom: 1px solid white;
     text-align: center;
     /*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/ }
+    so you really have to rethink your dropdowns for mobile.
+    you don't want to have it expand too much because the
+    screen is so small. How you manage your menu should
+    depend on the project. Here's some great info on it:
+    http://www.alistapart.com/articles/organizing-mobile/
+    */ }
     .nav li a {
       display: block;
       color: #fff;
@@ -1944,11 +2029,11 @@ article .hero--image img {
 .entry-content {
   padding: 1.5em 1.5em 0;
   /*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/ }
+  image alignment on a screen this size may be
+  a bit difficult. It's set to start aligning
+  and floating images at the next breakpoint,
+  but it's up to you. Feel free to change it up.
+  */ }
   .entry-content p {
     margin: 0 0 1.5em; }
   .entry-content table {
@@ -2109,7 +2194,6 @@ PAGE NAVI STYLES
 /* fallback previous & next links */
 .wp-prev-next .prev-link {
   float: left; }
-
 .wp-prev-next .next-link {
   float: right; }
 
@@ -2267,36 +2351,33 @@ FOOTER STYLES
   color: #f8f9fa; }
 
 /*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav
+a bit more in-depth. Remember to keep
+it simple because you'll have to
+override these styles for the desktop
+view.
+*/
 /* end .footer-links */
 /*********************
 LARGER MOBILE DEVICES
 *********************/
 @media only screen and (min-width: 48em) {
   /*********************
-NAVIGATION STYLES
-*********************/
+  NAVIGATION STYLES
+  *********************/
   #mobile-nav {
     display: none; }
+
   .nav {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     height: auto;
     opacity: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; }
     .nav li {
       border-bottom: 0; }
+
   /* .menu is clearfixed inside mixins.scss */
   .menu {
     /* end .menu ul */ }
@@ -2307,17 +2388,18 @@ NAVIGATION STYLES
       .menu ul li {
         text-align: left;
         /*
-				plan your menus and drop-downs wisely.
-				*/ }
+        plan your menus and drop-downs wisely.
+        */ }
         .menu ul li a {
           /*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/ }
+          you can use hover styles here even though this size
+          has the possibility of being a mobile device.
+          */ }
+
   /* end .menu */
   /*********************
-POSTS & CONTENT STYLES
-*********************/
+  POSTS & CONTENT STYLES
+  *********************/
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */ }
@@ -2334,34 +2416,35 @@ POSTS & CONTENT STYLES
       margin-left: auto;
       display: block;
       clear: both; }
+
   /* end .entry-content */
   /*********************
-FOOTER STYLES
-*********************/
+  FOOTER STYLES
+  *********************/
   /*
-check your menus here. do they look good?
-do they need tweaking?
-*/
+  check your menus here. do they look good?
+  do they need tweaking?
+  */
   /* end .footer-links */ }
-
 /*********************
 TABLET & SMALLER LAPTOPS
 *********************/
 @media only screen and (min-width: 64em) {
   /*********************
-GENERAL STYLES
-*********************/
+  GENERAL STYLES
+  *********************/
   /*********************
-LAYOUT & GRID STYLES
-*********************/
+  LAYOUT & GRID STYLES
+  *********************/
   .wrap {
     width: 760px; }
+
   /*********************
-HEADER STYLES
-*********************/
+  HEADER STYLES
+  *********************/
   /*********************
-NAVIGATION STYLES
-*********************/
+  NAVIGATION STYLES
+  *********************/
   .nav {
     border: 0;
     /* end .menu ul li */
@@ -2372,15 +2455,15 @@ NAVIGATION STYLES
       margin-top: 0; }
     .nav li {
       /*
-		plan your menus and drop-downs wisely.
-		*/
+      plan your menus and drop-downs wisely.
+      */
       /* showing sub-menus */ }
       .nav li a {
         border-bottom: 0;
         /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/ }
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
         .nav li a:hover, .nav li a:focus {
           color: #fff;
           text-decoration: underline; }
@@ -2396,10 +2479,10 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li,
         .nav li ul.children li {
           /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/ }
+          if you need to go deeper, go nuts
+          just remember deeper menus suck
+          for usability. k, bai.
+          */ }
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
             padding-left: 10px;
@@ -2417,15 +2500,18 @@ NAVIGATION STYLES
       .nav li:hover > ul {
         top: auto;
         visibility: visible; }
+
   /* end .nav */
   /*********************
-SIDEBARS & ASIDES
-*********************/
+  SIDEBARS & ASIDES
+  *********************/
   .sidebar {
     /* margin-top: 2.2em; */ }
+
   .widgettitle {
     border-bottom: 2px solid #444;
     margin-bottom: 0.75em; }
+
   .widget {
     padding: 0 10px;
     margin: 2.2em 0; }
@@ -2435,6 +2521,7 @@ SIDEBARS & ASIDES
       .widget ul li ul {
         margin-top: 0.75em;
         padding-left: 1em; }
+
   /* links widget */
   /* meta widget */
   /* pages widget */
@@ -2447,28 +2534,27 @@ SIDEBARS & ASIDES
   /* search widget */
   /* text widget */
   /*********************
-FOOTER STYLES
-*********************/
+  FOOTER STYLES
+  *********************/
   /*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
+  you'll probably need to do quite a bit
+  of overriding here if you styled them for
+  mobile. Make sure to double check these!
+  */
   .footer-links ul li {
     /*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/ }
-  /* end .footer-links */ }
+    be careful with the depth of your menus.
+    it's very rare to have multi-depth menus in
+    the footer.
+    */ }
 
+  /* end .footer-links */ }
 /*********************
 DESKTOP
 *********************/
 @media only screen and (min-width: 75em) {
   .wrap {
     width: 1040px; } }
-
 /*********************
 LARGE VIEWING SIZE
 *********************/
@@ -2480,15 +2566,15 @@ be set to display none.
 *********************/
 @media print {
   /******************************************************************
-PRINT STYLES 
-******************************************************************/
+  PRINT STYLES 
+  ******************************************************************/
   * {
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
-            filter: none !important;
+    filter: none !important;
     -ms-filter: none !important; }
+
   a, a:visited {
     color: #444 !important;
     text-decoration: underline; }
@@ -2496,30 +2582,40 @@ PRINT STYLES
       content: " (" attr(href) ")"; }
     a abbr[title]:after, a:visited abbr[title]:after {
       content: " (" attr(title) ")"; }
+
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: ""; }
+
   pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
+
   thead {
     display: table-header-group; }
+
   tr, img {
     page-break-inside: avoid; }
+
   img {
     max-width: 100% !important; }
+
   @page {
     margin: 0.5cm; }
   p, h2, h3 {
     orphans: 3;
     widows: 3; }
+
   h2,
   h3 {
     page-break-after: avoid; }
+
   .sidebar,
   .page-navigation,
   .wp-prev-next,
   .respond-form,
   nav {
     display: none; } }
+
+/*# sourceMappingURL=style.css.map */

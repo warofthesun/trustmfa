@@ -1,7 +1,7 @@
 {
-  "name": "starter-theme",
+  "name": "trustmfa",
   "version": "1.0.0",
-  "description": "Base line Wordpress theme.",
+  "description": "Custom Wordpress theme for TrustMFA.com",
   "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "^2.26.3",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warofthesun/starter-theme.git"
+    "url": "git+https://github.com/warofthesun/trustmfa.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/warofthesun/starter-theme/issues"
+    "url": "https://github.com/warofthesun/trustmfa/issues"
   },
-  "homepage": "https://github.com/warofthesun/starter-theme#readme"
+  "homepage": "https://github.com/warofthesun/trustmfa#readme"
 }

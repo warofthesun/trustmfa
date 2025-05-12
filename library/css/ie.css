@@ -90,8 +90,8 @@ p {
   word-break: normal;
   word-wrap: normal;
   -webkit-hyphens: none;
-  -ms-hyphens: none;
-      hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3; }
@@ -145,14 +145,9 @@ NAVIGATION STYLES
   display: none; }
 
 .nav {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   height: auto;
   opacity: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
   .nav li {
     border-bottom: 0; }
@@ -167,13 +162,13 @@ NAVIGATION STYLES
     .menu ul li {
       text-align: left;
       /*
-				plan your menus and drop-downs wisely.
-				*/ }
+      plan your menus and drop-downs wisely.
+      */ }
       .menu ul li a {
         /*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/ }
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
 
 /* end .menu */
 /*********************
@@ -230,15 +225,15 @@ NAVIGATION STYLES
     margin-top: 0; }
   .nav li {
     /*
-		plan your menus and drop-downs wisely.
-		*/
+    plan your menus and drop-downs wisely.
+    */
     /* showing sub-menus */ }
     .nav li a {
       border-bottom: 0;
       /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/ }
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
       .nav li a:hover, .nav li a:focus {
         color: #fff;
         text-decoration: underline; }
@@ -254,10 +249,10 @@ NAVIGATION STYLES
       .nav li ul.sub-menu li,
       .nav li ul.children li {
         /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/ }
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
         .nav li ul.sub-menu li a,
         .nav li ul.children li a {
           padding-left: 10px;
@@ -318,10 +313,10 @@ mobile. Make sure to double check these!
 */
 .footer-links ul li {
   /*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/ }
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
 
 /* end .footer-links */
 .wrap {
@@ -350,3 +345,5 @@ header.php file to see what they are:
 .lt-ie8 .class { ... }
 
 */
+
+/*# sourceMappingURL=ie.css.map */
