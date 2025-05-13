@@ -42,11 +42,29 @@ $primary-700:       #293F56;
 $primary-800:       #1C2A3A;
 $primary-900:       #0E151D;
 
-$secondary-100:     #F7F7F2;
-$secondary-400:     #C8C5A5;
+$secondary-50:      #F9F7EC;
+$secondary-100:     #F1EDD6;
+$secondary-200:     #E5DEB1;
+$secondary-300:     #D3CA83;
+$secondary-400:     #BFB55C;
 $secondary-500:     #A69E3F;
+$secondary-600:     #827D2E;
+$secondary-700:     #646127;
+$secondary-800:     #504E24;
+$secondary-900:     #454422;
 $secondary-950:     #25250e;
-$accent:            #333;
+
+$grey-10:           #F5F6F7;
+$grey-50:           #E2E5E7;
+$grey-100:          #CFD3D7;
+$grey-200:          #C6CACF;
+$grey-300:          #BDC1C7;
+$grey-400:          #B3B9BF;
+$grey-500:          #A0A7AF;
+$grey-600:          #70757B;
+$grey-700:          #606469;
+$grey-800:          #404346;
+$grey-900:          #202123;
 
 $link-color:        $secondary-500;
 $link-hover:        darken($link-color, 9%);

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 Site Name:
 Author: The SplitPixel
@@ -450,6 +451,12 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+/******************************************************************
+Stylesheet: Tokens
+*********************/
+body, .hentry {
+  background-color: #F5F6F7; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -1470,30 +1477,44 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-#menu-login-and-forms.nav li a {
+.button_pair .button:nth-child(1), .button_pair .button:nth-child(2), #menu-login-and-forms.nav li a {
   display: inline-block;
   position: relative;
   font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #1C2A3A;
   text-decoration: none;
-  color: #25250e;
   font-size: 1em;
   font-weight: 700;
   padding: 8px 16px;
   border-radius: 4px;
-  border: 1px solid #A69E3F;
+  border: 1px solid #456990;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
-  transition: background-color 0.14s ease-in-out;
-  background: -webkit-linear-gradient(45deg, #C8C5A5, #A69E3F);
-  background: -moz-linear-gradient(45deg, #C8C5A5, #A69E3F);
-  background: -o-linear-gradient(45deg, #C8C5A5, #A69E3F);
-  background: linear-gradient(45deg, #C8C5A5, #A69E3F); }
-  #menu-login-and-forms.nav li a:hover, #menu-login-and-forms.nav li a:focus {
+  transition: background-color 0.14s ease-in-out; }
+  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), #menu-login-and-forms.nav li a:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), #menu-login-and-forms.nav li a:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  #menu-login-and-forms.nav li a:active {
+  .button_pair .button:active:nth-child(1), .button_pair .button:active:nth-child(2), #menu-login-and-forms.nav li a:active {
     top: 1px; }
+  .button_pair .button:nth-child(1), #menu-login-and-forms.nav li a {
+    color: #25250e;
+    border: 1px solid #A69E3F;
+    background: -webkit-linear-gradient(45deg, #BFB55C, #A69E3F);
+    background: -moz-linear-gradient(45deg, #BFB55C, #A69E3F);
+    background: -o-linear-gradient(45deg, #BFB55C, #A69E3F);
+    background: linear-gradient(45deg, #BFB55C, #A69E3F); }
+  .button_pair .button:nth-child(2) {
+    color: #A69E3F;
+    border: 2px solid #A69E3F; }
+  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), #menu-login-and-forms.nav li a:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), #menu-login-and-forms.nav li a:focus {
+    color: #BFB55C;
+    background: -webkit-linear-gradient(90deg, #827D2E, #646127);
+    background: -moz-linear-gradient(90deg, #827D2E, #646127);
+    background: -o-linear-gradient(90deg, #827D2E, #646127);
+    background: linear-gradient(90deg, #827D2E, #646127);
+    text-decoration: none;
+    outline: none; }
 
 /*
 An example button.
@@ -1502,15 +1523,15 @@ and it will create a button dependant on those variables.
 
 .accent-btn {
   @extend %btn; // here we load the btn defaults
-  background-color: $accent;
+  background-color: $secondary-500;
 
   &:hover,
   &:focus {
-    background-color: darken($accent, 4%);
+    background-color: darken($secondary-500, 4%);
   } // end hover
 
   &:active {
-    background-color: darken($accent, 5%);
+    background-color: darken($secondary-500, 5%);
   } // end active
 
 } // end blue button
@@ -1827,7 +1848,6 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #eaedf2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -1849,6 +1869,13 @@ img {
   flex-wrap: wrap; }
   #inner-footer .nav li {
     border-bottom: 0px; }
+
+/***************
+CONTROLS
+Buttons and such
+****************/
+.button_pair .button:nth-child(1) {
+  margin-right: 1em; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -1929,9 +1956,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 2.5em;
-  line-height: 1.333em;
-  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
+  font-size: 4.5em;
+  line-height: .9em;
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+  color: #A2B4C7; }
 
 h2, .h2 {
   font-size: 1.75em;
@@ -2057,15 +2085,44 @@ POSTS & CONTENT STYLES
   background: -o-linear-gradient(0deg, #293F56, #456990);
   background: linear-gradient(0deg, #293F56, #456990);
   margin-top: -10px; }
+  .hero__container .content_curve__up svg {
+    margin-top: -90px;
+    margin-bottom: -20px; }
   .hero__container_inner {
     max-width: 1440px;
     margin: auto; }
+  .hero__container h1 {
+    margin-top: 0;
+    margin-bottom: 0; }
+    .hero__container h1 span {
+      display: block;
+      color: #C7D2DE;
+      font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: .4em;
+      line-height: 1.1; }
+  .hero__container h2 {
+    margin-top: 0; }
+    .hero__container h2 ul {
+      font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0; }
+      .hero__container h2 ul li {
+        display: inline-block;
+        color: #A69E3F;
+        font-weight: 800; }
+        .hero__container h2 ul li:nth-child(1):after, .hero__container h2 ul li:nth-child(2):after {
+          content: " • ";
+          color: #8FA5BC; }
+  .hero__container p {
+    color: #F5FAFF; }
 .hero__content {
-  height: 600px; }
+  height: 750px; }
   .hero__content_image {
     background-size: cover;
     background-position: right top;
-    padding: 0; }
+    padding: 0;
+    border-right: 2px solid #A69E3F;
+    box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
   .hero__content_text {
     background: -webkit-linear-gradient(0deg, #293F56, #456990);
     background: -moz-linear-gradient(0deg, #293F56, #456990);
@@ -2073,7 +2130,11 @@ POSTS & CONTENT STYLES
     background: linear-gradient(0deg, #293F56, #456990);
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 5%; }
+    .hero__content_text-angle {
+      margin-left: -30px; }
 
 #content {
   margin-top: 1.5em; }
@@ -2082,19 +2143,14 @@ article .hero--image img {
   width: 100%;
   height: auto; }
 
-.hentry {
-  background-color: #fff;
-  border-radius: 3px;
-  margin-bottom: 1.5em;
-  border: 1px solid #ccc; }
-  .hentry header {
-    border-bottom: 1px solid #f8f9fa;
-    padding: 1.5em; }
-  .hentry footer {
-    padding: 1.5em;
-    border-top: 1px solid #f8f9fa; }
-    .hentry footer p {
-      margin: 0; }
+.hentry header {
+  border-bottom: 1px solid #f8f9fa;
+  padding: 1.5em; }
+.hentry footer {
+  padding: 1.5em;
+  border-top: 1px solid #f8f9fa; }
+  .hentry footer p {
+    margin: 0; }
 
 /* end .hentry */
 .single-title,
@@ -2156,7 +2212,7 @@ article .hero--image img {
   .entry-content blockquote {
     margin: 0 0 1.5em 0.75em;
     padding: 0 0 0 0.75em;
-    border-left: 3px solid #333;
+    border-left: 3px solid #A69E3F;
     font-style: italic;
     color: #9fa6b4; }
   .entry-content dd {
@@ -2271,9 +2327,9 @@ PAGE NAVI STYLES
     padding: 0.75em;
     min-width: 1em;
     display: block;
-    color: #333; }
+    color: #A69E3F; }
     .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-      background-color: #333;
+      background-color: #A69E3F;
       color: #fff; }
   .pagination .current {
     cursor: default;

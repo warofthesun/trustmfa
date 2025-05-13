@@ -7,7 +7,7 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	@extend %content_background__primary;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -36,6 +36,26 @@ img {
 		li {
 			border-bottom: 0px;
 		}
+	}
+}
+
+/***************
+CONTROLS
+Buttons and such
+****************/
+
+.button_pair {
+	.button:nth-child(1) {
+		@extend %btn;
+		@extend %btn_secondary;
+		@extend %btn_secondary__solid;
+		margin-right: 1em;
+	}
+
+	.button:nth-child(2) {
+		@extend %btn;
+		@extend %btn_secondary;
+		@extend %btn_secondary__outline;
 	}
 }
 
@@ -136,9 +156,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
-	line-height: 1.333em;
+	font-size: 4.5em;
+	line-height: .9em;
 	font-family: $serif;
+	color: $primary-100;
 }
 
 h2, .h2 {
@@ -227,6 +248,8 @@ and more scalable.
 	align-items: center;
 
 	&.nav li a {
+		@extend %btn;
+		@extend %btn_secondary;
 		@extend %btn_secondary__solid;
 	}
 }
@@ -336,21 +359,67 @@ POSTS & CONTENT STYLES
 		@include gradient(0deg, $primary-700, $primary-500);
 		margin-top: -10px;
 
+		.content_curve__up {
+			svg {
+				margin-top: -90px;
+				margin-bottom: -20px;
+			}
+		}
+
 		&_inner {
 			max-width: 1440px;
 			margin: auto;
 		}
 
-		
+		h1 {
+			margin-top: 0;
+			margin-bottom: 0;
+
+			span {
+				display: block;
+				color: $primary-50;
+				font-family: $sans-serif;
+				text-transform: uppercase;
+				font-size: .4em;
+				line-height: 1.1;
+			}
+		}
+
+		h2 {
+			margin-top: 0;
+			ul {
+			font-family: $sans-serif;
+			margin:0;
+
+			li {
+				display: inline-block;
+				color: $secondary-500;
+				font-weight: 800;
+
+				&:nth-child(1), &:nth-child(2) {
+					&:after {
+						content: " • ";
+						color: $primary-200;
+					}
+				}
+			}
+			}
+		}
+
+		p {
+			color: $primary-10;
+		}
 	}
 
 	&__content {
-			height: 600px;
+			height: 750px;
 
 			&_image {
 				background-size: cover;
 				background-position: right top;
 				padding: 0;
+				border-right: 2px solid $secondary-500;
+				box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23);
 			}
 
 			&_text {
@@ -358,6 +427,12 @@ POSTS & CONTENT STYLES
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+				padding-left: 10%;
+				padding-right: 5%;
+
+				&-angle {
+					margin-left: -30px;
+				}
 			}
 
 			
@@ -380,10 +455,7 @@ article {
 }
 
 		.hentry {
-			background-color: $white;
-			border-radius: 3px;
-			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
+			@extend %content_background__primary;
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -507,7 +579,7 @@ article {
 			blockquote {
 				margin: 0 0 1.5em 0.75em;
 				padding: 0 0 0 0.75em;
-				border-left: 3px solid $accent;
+				border-left: 3px solid $secondary-500;
 				font-style: italic;
 				color: $meta-gray;
 
@@ -697,10 +769,10 @@ PAGE NAVI STYLES
       padding: 0.75em;
       min-width: 1em;
       display: block;
-      color: $accent;
+      color: $secondary-500;
 
       &:hover, &:focus {
-      	background-color: $accent;
+      	background-color: $secondary-500;
       	color: $white;
       }
     }

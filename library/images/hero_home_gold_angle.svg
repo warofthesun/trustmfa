@@ -1,4 +1,10 @@
 <svg width="253" height="100%" viewBox="0 0 253 100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+			<linearGradient id="dark_primary_gradient" x1="0" x2="0" y1="1" y2="0">
+				<stop class="dark_primary_gradient__stop-1" offset="0%" />
+				<stop class="dark_primary_gradient__stop-2" offset="100%" />
+			</linearGradient>
+		</defs>
 <mask id="mask0_2127_25389" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="253" height="772">
 <rect width="253" height="772" fill="#D9D9D9"/>
 </mask>
@@ -255,7 +261,7 @@
 </g>
 </g>
 <g filter="url(#filter1_d_2127_25389)">
-<path d="M-5 0L169 0C169 0 8.59619 246 8.59619 481.5C8.59619 653 63.8077 772 63.8077 772H-5V0Z" fill="#EF1E0B"/>
+<path d="M-5 0L169 0C169 0 8.59619 246 8.59619 481.5C8.59619 653 63.8077 772 63.8077 772H-5V0Z" fill="url(#dark_primary_gradient)"/>
 </g>
 </g>
 <defs>
