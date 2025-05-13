@@ -16,7 +16,13 @@ img {
 	image-rendering: auto;
 }
 
-#inner-header, #inner-footer {
+#inner-header {
+	flex-direction: row;
+	height: 80px;
+	align-items: center;
+}
+
+#inner-footer {
 	flex-direction: column;
 }
 
@@ -163,11 +169,34 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: $primary-800;
+	@include box-shadow($bottom-diffused);
+	position: relative;
+	z-index: 99;
 }
 
-	#logo {
-		margin: 0.75em 0;
+	#logo, #trustmfa_logo {
+		height: 50px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		display: inline-block;
+		margin-right: 24px;
+
+		.st0 {
+			fill: url(#logo-gradient2);
+		  }
+	
+		  .st1 {
+			fill: url(#logo-gradient1);
+		  }
+	
+		  .st2 {
+			fill: url(#logo-gradient);
+		  }
+	
+		  .st3 {
+			fill: $primary-10;
+		  }
 
 		a {
 			color: $white;
@@ -186,6 +215,21 @@ the navs on the site so our css is cleaner
 and more scalable.
 
 */
+
+.header_nav {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+#menu-login-and-forms {
+	margin-left: auto;
+	align-items: center;
+
+	&.nav li a {
+		@extend %btn_secondary__solid;
+	}
+}
 #mobile-nav {
 	text-align: center;
 	margin-bottom: 1em;
@@ -230,6 +274,8 @@ and more scalable.
 			color: $white;
 			text-decoration: none;
 			padding: 0.75em;
+			font-family: $serif;
+			font-size: 1.1em;;
 
 		}
 
@@ -284,6 +330,39 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+
+.hero {
+	&__container {
+		@include gradient(0deg, $primary-700, $primary-500);
+		margin-top: -10px;
+
+		&_inner {
+			max-width: 1440px;
+			margin: auto;
+		}
+
+		
+	}
+
+	&__content {
+			height: 600px;
+
+			&_image {
+				background-size: cover;
+				background-position: right top;
+				padding: 0;
+			}
+
+			&_text {
+				@include gradient(0deg, $primary-700, $primary-500);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			
+	}
+}
 
 #content {
 	margin-top: 1.5em;
@@ -823,7 +902,7 @@ COMMENT STYLES
 
 	} /* end .commentlist .comment_content */
 
-	/* comment reply link */
+	/* comment reply link 
 	.comment-reply-link {
 		@extend .accent-btn;
 		font-size: 0.9em;
@@ -881,7 +960,7 @@ COMMENT FORM STYLES
 
 	/* comment submit button */
 	#submit {
-		@extend .accent-btn;
+		@extend .accent-btn !optional;
 		float: right;
 		font-size: 1em;
 	}

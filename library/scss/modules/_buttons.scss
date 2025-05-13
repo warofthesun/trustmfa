@@ -24,21 +24,20 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 
-%btn {
+%btn_secondary__solid {
   display: inline-block;
   position: relative;
   font-family: $sans-serif;
   text-decoration: none;
-  color: $white;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
-  font-weight: normal;
-  padding: 0 24px;
+  color: $secondary-950;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 8px 16px;
   border-radius: 4px;
-  border: 0;
+  border: 1px solid $secondary-500;
   cursor: pointer;
   @include transition(background-color 0.14s ease-in-out);
+  @include gradient(45deg, $secondary-two_stops);
 
   // hovering on the btn
   &:hover, &:focus {
@@ -58,7 +57,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
-*/
+
 .accent-btn {
   @extend %btn; // here we load the btn defaults
   background-color: $accent;
@@ -73,3 +72,4 @@ and it will create a button dependant on those variables.
   } // end active
 
 } // end blue button
+*/

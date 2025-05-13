@@ -56,6 +56,21 @@ really slow down your CSS. Don't overdo it.
 	background-image: linear-gradient(to bottom, $from, $to);
 }
 
+$secondary-two_stops: $secondary-400, $secondary-500; 
+
+//$list2: $blue 0%,$blue 33%,$green 33%,$green 66%, $orange 66%, $orange 100%; 
+
+//$list3: $blue 0%,$blue 10%,$green 25%,$green 39%,$orange 79%,$orange 100%; 
+
+//$list4: $blue, $green, $orange, $blue, $green, $orange, $blue, $green, $orange; 
+
+@mixin gradient($angle, $args...) { 
+	background: -webkit-linear-gradient($angle, $args);
+	background: -moz-linear-gradient($angle, $args);
+	background: -o-linear-gradient($angle, $args);
+	background: linear-gradient($angle, $args);  
+  }
+
 /*********************
 BOX SIZING
 *********************/
@@ -71,3 +86,26 @@ probably best not to use it. I mean, were you going to anyway? */
 }
 
 
+/* Set 3 variables w/ different styles */
+$bottom-diffused: 0px 13px 21px -10px rgba(0, 0, 0, 0.3);
+$left-diffused: -13px 0px 21px -10px rgba(0, 0, 0, 0.3);
+$right-diffused: 13px 0px 21px -10px rgba(0, 0, 0, 0.3);
+
+/* Create our super simple mixin */
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+}
+
+/* Putting it all together in our classes 
+.bottom-box {
+    @include box-shadow($bottom-diffused);
+}
+
+.left-box {
+    @include box-shadow($left-diffused);
+}
+
+.right-box {
+    @include box-shadow($right-diffused);
+}
+*/

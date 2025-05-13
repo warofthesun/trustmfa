@@ -11,13 +11,13 @@ LAUNCH starter
 Let's get everything up and running.
 *********************/
 
-function starter_ahoy() {
+function trustmfa_setup() {
 
   //Allow editor style.
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  load_theme_textdomain( 'startertheme', get_template_directory() . '/library/translation' );
+  load_theme_textdomain( 'trustmfa_theme', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
@@ -50,10 +50,13 @@ function starter_ahoy() {
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'starter_excerpt_more' );
 
-} /* end starter ahoy */
+  //add additional menu locations
+  register_nav_menu( 'login_forms', 'Login' );
+
+} /* end trustmfa_setup */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'starter_ahoy' );
+add_action( 'after_setup_theme', 'trustmfa_setup' );
 
 
 /************* OEMBED SIZE OPTIONS *************/
@@ -110,42 +113,6 @@ new image size.
 // TGM Plugin Activation Class
 require_once locate_template('library/tgm-plugin-activation/class-tgm-plugin-activation.php');
 
-/************* THEME CUSTOMIZE *********************/
-
-/*
-  A good tutorial for creating your own Sections, Controls and Settings:
-  http://code.tutsplus.com/series/a-guide-to-the-wordpress-theme-customizer--wp-33722
-
-  Good articles on modifying the default options:
-  http://natko.com/changing-default-wordpress-theme-customization-api-sections/
-  http://code.tutsplus.com/tutorials/digging-into-the-theme-customizer-components--wp-27162
-
-  To do:
-  - Create a js for the postmessage transport method
-  - Create some sanitize functions to sanitize inputs
-  - Create some boilerplate Sections, Controls and Settings
-*/
-
-function starter_theme_customizer($wp_customize) {
-  // $wp_customize calls go here.
-  //
-  // Uncomment the below lines to remove the default customize sections
-
-  // $wp_customize->remove_section('title_tagline');
-  // $wp_customize->remove_section('colors');
-  // $wp_customize->remove_section('background_image');
-  // $wp_customize->remove_section('static_front_page');
-  // $wp_customize->remove_section('nav');
-
-  // Uncomment the below lines to remove the default controls
-  // $wp_customize->remove_control('blogdescription');
-
-  // Uncomment the following to change the default section titles
-  // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
-  // $wp_customize->get_section('background_image')->title = __( 'Images' );
-}
-
-add_action( 'customize_register', 'starter_theme_customizer' );
 
 /************* ACTIVE SIDEBARS ********************/
 
@@ -153,8 +120,8 @@ add_action( 'customize_register', 'starter_theme_customizer' );
 function starter_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'startertheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'startertheme' ),
+		'name' => __( 'Sidebar 1', 'trustmfa_theme' ),
+		'description' => __( 'The first (primary) sidebar.', 'trustmfa_theme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -171,8 +138,8 @@ function starter_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'startertheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'startertheme' ),
+		'name' => __( 'Sidebar 2', 'trustmfa_theme' ),
+		'description' => __( 'The second (secondary) sidebar.', 'trustmfa_theme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -271,13 +238,13 @@ function starter_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'startertheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'startertheme' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'startertheme' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'trustmfa_theme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'trustmfa_theme' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'trustmfa_theme' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'startertheme' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'trustmfa_theme' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">

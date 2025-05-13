@@ -594,6 +594,21 @@ BOX SIZING
 /* @include box-sizing(border-box); */
 /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
+/* Set 3 variables w/ different styles */
+/* Create our super simple mixin */
+/* Putting it all together in our classes 
+.bottom-box {
+    @include box-shadow($bottom-diffused);
+}
+
+.left-box {
+    @include box-shadow($left-diffused);
+}
+
+.right-box {
+    @include box-shadow($right-diffused);
+}
+*/
 .container-fluid,
 .container {
   margin-right: auto;
@@ -1455,41 +1470,51 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.accent-btn, .comment-reply-link, #submit {
+#menu-login-and-forms.nav li a {
   display: inline-block;
   position: relative;
   font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: #fff;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
-  font-weight: normal;
-  padding: 0 24px;
+  color: #25250e;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 8px 16px;
   border-radius: 4px;
-  border: 0;
+  border: 1px solid #A69E3F;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
-  transition: background-color 0.14s ease-in-out; }
-  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
+  transition: background-color 0.14s ease-in-out;
+  background: -webkit-linear-gradient(45deg, #C8C5A5, #A69E3F);
+  background: -moz-linear-gradient(45deg, #C8C5A5, #A69E3F);
+  background: -o-linear-gradient(45deg, #C8C5A5, #A69E3F);
+  background: linear-gradient(45deg, #C8C5A5, #A69E3F); }
+  #menu-login-and-forms.nav li a:hover, #menu-login-and-forms.nav li a:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .accent-btn:active, .comment-reply-link:active, #submit:active {
+  #menu-login-and-forms.nav li a:active {
     top: 1px; }
 
 /*
 An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
-*/
-.accent-btn, .comment-reply-link, #submit {
-  background-color: #333; }
-  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
-    background-color: #292929; }
-  .accent-btn:active, .comment-reply-link:active, #submit:active {
-    background-color: #262626; }
 
+.accent-btn {
+  @extend %btn; // here we load the btn defaults
+  background-color: $accent;
+
+  &:hover,
+  &:focus {
+    background-color: darken($accent, 4%);
+  } // end hover
+
+  &:active {
+    background-color: darken($accent, 5%);
+  } // end active
+
+} // end blue button
+*/
 /******************************************************************
 Site Name:
 Author:
@@ -1779,6 +1804,18 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Gradient Styles
+
+*********************/
+.dark_primary_gradient__stop-1 {
+  stop-color: #293F56; }
+.dark_primary_gradient__stop-2 {
+  stop-color: #456990; }
+
 /*********************
 BASE (MOBILE) SIZE
 *********************/
@@ -1797,7 +1834,12 @@ body {
 img {
   image-rendering: auto; }
 
-#inner-header, #inner-footer {
+#inner-header {
+  flex-direction: row;
+  height: 80px;
+  align-items: center; }
+
+#inner-footer {
   flex-direction: column; }
 
 #inner-footer .nav {
@@ -1914,11 +1956,26 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #000; }
+  background-color: #1C2A3A;
+  box-shadow: 0px 13px 21px -10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 99; }
 
-#logo {
-  margin: 0.75em 0; }
-  #logo a {
+#logo, #trustmfa_logo {
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  margin-right: 24px; }
+  #logo .st0, #trustmfa_logo .st0 {
+    fill: url(#logo-gradient2); }
+  #logo .st1, #trustmfa_logo .st1 {
+    fill: url(#logo-gradient1); }
+  #logo .st2, #trustmfa_logo .st2 {
+    fill: url(#logo-gradient); }
+  #logo .st3, #trustmfa_logo .st3 {
+    fill: #F5FAFF; }
+  #logo a, #trustmfa_logo a {
     color: #fff; }
 
 /*********************
@@ -1932,6 +1989,15 @@ the navs on the site so our css is cleaner
 and more scalable.
 
 */
+.header_nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; }
+
+#menu-login-and-forms {
+  margin-left: auto;
+  align-items: center; }
+
 #mobile-nav {
   text-align: center;
   margin-bottom: 1em;
@@ -1974,7 +2040,9 @@ and more scalable.
       display: block;
       color: #fff;
       text-decoration: none;
-      padding: 0.75em; }
+      padding: 0.75em;
+      font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+      font-size: 1.1em; }
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }
@@ -1983,6 +2051,30 @@ and more scalable.
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.hero__container {
+  background: -webkit-linear-gradient(0deg, #293F56, #456990);
+  background: -moz-linear-gradient(0deg, #293F56, #456990);
+  background: -o-linear-gradient(0deg, #293F56, #456990);
+  background: linear-gradient(0deg, #293F56, #456990);
+  margin-top: -10px; }
+  .hero__container_inner {
+    max-width: 1440px;
+    margin: auto; }
+.hero__content {
+  height: 600px; }
+  .hero__content_image {
+    background-size: cover;
+    background-position: right top;
+    padding: 0; }
+  .hero__content_text {
+    background: -webkit-linear-gradient(0deg, #293F56, #456990);
+    background: -moz-linear-gradient(0deg, #293F56, #456990);
+    background: -o-linear-gradient(0deg, #293F56, #456990);
+    background: linear-gradient(0deg, #293F56, #456990);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
 #content {
   margin-top: 1.5em; }
 
@@ -2271,12 +2363,17 @@ COMMENT STYLES
   line-height: 1.5em; }
 
 /* end .commentlist .comment_content */
-/* comment reply link */
-.comment-reply-link {
-  font-size: 0.9em;
-  float: right; }
+	/* comment reply link 
+	.comment-reply-link {
+		@extend .accent-btn;
+		font-size: 0.9em;
+		float: right;
 
-/* end .commentlist .comment-reply-link */
+		&:hover,
+		&:focus {
+		}
+
+	} /* end .commentlist .comment-reply-link */
 /* edit comment link */
 .comment-edit-link {
   font-style: italic;
