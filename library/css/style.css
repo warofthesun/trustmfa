@@ -2711,6 +2711,19 @@ DESKTOP
 /*********************
 LARGE VIEWING SIZE
 *********************/
+@media only screen and (min-width: 1240px) {
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/
+  .wrap {
+    width: 1280px; } }
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make
