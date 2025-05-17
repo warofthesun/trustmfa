@@ -1,6 +1,6 @@
 {
     "key": "group_68224fa77d735",
-    "title": "Home Page Hero Settings",
+    "title": "Landing Page Hero Settings",
     "fields": [
         {
             "key": "field_6822510aeee1f",
@@ -118,5 +118,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1747160654
+    "modified": 1747328842
 }

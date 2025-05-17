@@ -2085,56 +2085,84 @@ POSTS & CONTENT STYLES
   background: -o-linear-gradient(0deg, #293F56, #456990);
   background: linear-gradient(0deg, #293F56, #456990);
   margin-top: -10px; }
-  .hero__container .content_curve__up svg {
+  .hero__container h1 {
+    position: relative; }
+  .hero__container_landing .content_curve__up svg, .hero__container_large .content_curve__up svg {
     margin-top: -90px;
     margin-bottom: -20px; }
-  .hero__container_inner {
-    max-width: 1440px;
-    margin: auto; }
-  .hero__container h1 {
+  .hero__container_medium .content_curve__outer svg {
+    margin-top: -80px;
+    margin-bottom: -30px; }
+  .hero__container_landing h1 {
     margin-top: 0;
     margin-bottom: 0; }
-    .hero__container h1 span {
+    .hero__container_landing h1 span {
       display: block;
       color: #C7D2DE;
       font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
       text-transform: uppercase;
       font-size: .4em;
       line-height: 1.1; }
-  .hero__container h2 {
+  .hero__container_landing h2 {
     margin-top: 0; }
-    .hero__container h2 ul {
+    .hero__container_landing h2 ul {
       font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
       margin: 0; }
-      .hero__container h2 ul li {
+      .hero__container_landing h2 ul li {
         display: inline-block;
         color: #A69E3F;
         font-weight: 800; }
-        .hero__container h2 ul li:nth-child(1):after, .hero__container h2 ul li:nth-child(2):after {
+        .hero__container_landing h2 ul li:nth-child(1):after, .hero__container_landing h2 ul li:nth-child(2):after {
           content: " • ";
           color: #8FA5BC; }
+  .hero__container_landing .hero__content {
+    height: 750px; }
+  .hero__container_large .hero__content {
+    height: 550px; }
+    .hero__container_large .hero__content_text {
+      justify-content: flex-end; }
+  .hero__container_medium .hero__content {
+    height: 400px; }
+    .hero__container_medium .hero__content_text {
+      justify-content: flex-end; }
+  .hero__container_small {
+    background: url("../images/pattern_circle.png") repeat left top, linear-gradient(#D3CA83, #A69E3F); }
+    .hero__container_small .hero__content {
+      background-color: white; }
+    .hero__container_small .hero__content_text {
+      background: none; }
+      .hero__container_small .hero__content_text h1 {
+        color: #F9F7EC;
+        text-align: center;
+        text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.23); }
+    .hero__container_small .header_curve_lower {
+      margin-top: -120px; }
+    .hero__container_small .content_curve__outer svg {
+      margin-top: -90px;
+      margin-bottom: -20px; }
+  .hero__container_inner {
+    max-width: 1440px;
+    margin: auto; }
   .hero__container p {
     color: #F5FAFF; }
-.hero__content {
-  height: 750px; }
-  .hero__content_image {
-    background-size: cover;
-    background-position: right top;
-    padding: 0;
-    border-right: 2px solid #A69E3F;
-    box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
-  .hero__content_text {
-    background: -webkit-linear-gradient(0deg, #293F56, #456990);
-    background: -moz-linear-gradient(0deg, #293F56, #456990);
-    background: -o-linear-gradient(0deg, #293F56, #456990);
-    background: linear-gradient(0deg, #293F56, #456990);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 10%;
-    padding-right: 5%; }
-    .hero__content_text-angle {
-      margin-left: -30px; }
+.hero__content_image {
+  background-size: cover;
+  background-position: right top;
+  padding: 0;
+  border-right: 2px solid #A69E3F;
+  box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
+.hero__content_text {
+  background: -webkit-linear-gradient(0deg, #293F56, #456990);
+  background: -moz-linear-gradient(0deg, #293F56, #456990);
+  background: -o-linear-gradient(0deg, #293F56, #456990);
+  background: linear-gradient(0deg, #293F56, #456990);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 5%; }
+  .hero__content_text-angle {
+    margin-left: -30px; }
 
 #content {
   margin-top: 1.5em; }

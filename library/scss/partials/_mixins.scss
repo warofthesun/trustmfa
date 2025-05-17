@@ -75,6 +75,11 @@ $primary-two_stops__dark_reverse: $primary-700, $primary-500;
 	background: linear-gradient($angle, $args);  
   }
 
+@mixin gold_overlay_gradient() {
+	background: url("../images/pattern_circle.png") repeat left top, linear-gradient($secondary-300, $secondary-500);
+}
+
+
 /*********************
 BOX SIZING
 *********************/
