@@ -3,47 +3,34 @@
 <?php include 'hero/hero-small.php'; ?>
 			<div id="content">
 
-				<div id="inner-content" class="wrap  row">
+				<div id="inner-content" class="wrap row">
 
-						<main id="main" class="col-xs-12 col-sm-8 col-lg-9 " role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="col-xs-12 <?php if(get_field('include_sidebar_on_blog_page', 'option')) :  ?>col-sm-8 col-lg-9<?php endif; ?> row" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<div class="gallery_item col-xs-12 <?php if(get_field('include_sidebar_on_blog_page', 'option')) :  ?>col-md-12 col-lg-6<?php else :?>col-sm-6 col-lg-4<?php endif; ?>">
+								<article id="post-<?php the_ID(); ?>" <?php post_class( ' single-post' ); ?> role="article" >
+									<div class="hero--image">
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+											<?php the_post_thumbnail('gallery-image'); ?>
+										</a>
+									</div>
+									<header class="article-header">
+										<div class="article-meta">
+										<?php printf( '<p class="post-category">' . get_the_category_list(', ') ); ?>
+										<p class="byline entry-meta vcard">
+											<?php printf( __( '', 'trustmfa_theme' ).' %1$s', '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',); ?>
+										</p>
+										</div>
+										<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+										
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( ' single-post' ); ?> role="article">
-								<div class="hero--image"><?php the_post_thumbnail('gallery-image'); ?></div>
-								<header class="article-header">
+									</header>
 
-									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline entry-meta vcard">
-	                      <?php printf( __( 'Posted', 'trustmfa_theme' ).' %1$s %2$s',
-	       								/* the time the post was published */
-	       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-	       								/* the author of the post */
-	       								'<span class="by">'.__( 'by', 'trustmfa_theme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-	    							); ?>
-									</p>
-
-								</header>
-
-								<section class="entry-content ">
-									<?php the_excerpt(); ?>
-								</section>
-
-								<footer class="article-footer ">
-									<p class="footer-comment-count">
-										<?php comments_number( __( '<span>No</span> Comments', 'trustmfa_theme' ), __( '<span>One</span> Comment', 'trustmfa_theme' ), __( '<span>%</span> Comments', 'trustmfa_theme' ) );?>
-									</p>
-
-
-                 	<?php printf( '<p class="footer-category">' . __('filed under', 'trustmfa_theme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
-
-                  <?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'trustmfa_theme' ) . '</span> ', ', ', '</p>' ); ?>
-
-
-								</footer>
-
-							</article>
-
+								</article>
+								<a href="<?php the_permalink() ?>" class="button button_secondary__text">Read more <i class="fa-solid fa-right"></i></a>
+									<!--end gallery item-->
+								</div>
 							<?php endwhile; ?>
 
 									<?php starter_page_navi(); ?>
@@ -66,8 +53,9 @@
 
 
 						</main>
-
-					<?php get_sidebar(); ?>
+						<?php if(get_field('include_sidebar_on_blog_page', 'option')) :  ?>
+							<?php get_sidebar(); ?>
+						<?php endif; ?>
 
 				</div>
 

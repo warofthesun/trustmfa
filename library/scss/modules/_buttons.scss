@@ -38,6 +38,10 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   @include transition(background-color 0.14s ease-in-out);
 
+  .svg-inline--fa {
+    font-size: .9em;
+  }
+
   // hovering on the btn
   &:hover, &:focus {
     color: $white;
@@ -60,6 +64,18 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     &__outline {
       color: $secondary-500;
       border: 2px solid $secondary-500;
+    }
+
+    &__text {
+      color: $secondary-500;
+      border: 0px;
+      display: block;
+
+      &:hover, &:focus {
+        color: $secondary-600;
+        text-decoration: none;
+        outline: none;
+      }
     }
 
     &:hover, &:focus {

@@ -355,7 +355,6 @@ POSTS & CONTENT STYLES
 *********************/
 
 .hero {
-	
 
 	&__container {
 		@include gradient(0deg, $primary-700, $primary-500);
@@ -507,6 +506,73 @@ POSTS & CONTENT STYLES
 
 			
 	}
+
+	&__post {
+		&_text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			h1 {
+			font-size: 3.5em;
+			}
+		}
+		
+	}
+}
+
+.gallery_item {
+	padding: 1em;
+	margin-bottom: 3em;
+	display: flex;
+	flex-direction: column;
+	.article {
+		&-header {
+			padding: 0 1em;
+
+			.entry-title {
+				line-height: 1;
+				margin-bottom: 1em;
+
+				a {
+					font-family: $sans-serif;
+					font-weight: 700;
+					color: $primary-600;
+					font-size: .9em;
+					
+				}
+				
+			}
+		}	
+
+		&-meta {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 16px;
+		}
+	}
+
+	.button {
+		padding: 1em;
+		margin-top: auto;
+		@extend %btn;
+		@extend %btn_secondary__text;
+	}
+}
+
+.hero--image img {
+	border-radius: 16px;
+	border: 1px solid $secondary-500;
+	@include box-shadow($bottom-diffused);
+}
+
+.post-category {
+	margin: 0;
+
+	a {
+		text-decoration: none;
+		font-family: $serif;
+	}
 }
 
 #content {
@@ -514,6 +580,8 @@ POSTS & CONTENT STYLES
 }
 
 article {
+	justify-content: center;
+
 	.hero {
 		&--image {
 			img {
@@ -534,7 +602,8 @@ article {
 
 			footer {
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
+				border-top: 1px solid $secondary-500;
+				width: 100%;
 
 				p {
 					margin: 0;
@@ -545,11 +614,14 @@ article {
 
 		.single-title,
 		.page-title,
-		.entry-title {
+		.entry-title
+		 {
 			margin: 0;
 		}
 
-		.single-title {}
+		.single-title {
+			margin: .2em 0;
+		}
 
 		.page-title {}
 
@@ -569,8 +641,9 @@ article {
 
 		/* post meta */
 		.byline {
-			color: $meta-gray;
-			font-style: italic;
+			color: $primary-700;
+			font-style: normal;
+			font-size: .8em;
 			margin: 0;
 
 			time {}

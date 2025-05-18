@@ -1,11 +1,21 @@
 <!--page-->
 <?php get_header(); ?>
+<?php if (is_front_page() ) :
+	include 'hero/hero-landing.php'; else : $hero_style = get_field('hero_style'); ?>
+	<?php if ($hero_style == 'landing'): include 'hero/hero-landing.php'; elseif ($hero_style == 'large'): ?>
+	<?php include 'hero/hero-large.php'; ?>
+	<?php elseif ($hero_style == 'medium'): ?>
+		<?php include 'hero/hero-medium.php'; ?>
+	<?php elseif ($hero_style == 'small'): ?>
+		<?php include 'hero/hero-small.php'; ?>
+	<?php else : endif; ?>
+<?php endif; ?>
 
 			<div id="content">
 
 				<div id="inner-content" class="wrap  row">
 
-						<main id="main" class="col-xs-12 col-sm-8 col-lg-9 " role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="col-xs-12 <?php if(get_field('include_sidebar_on_site_pages', 'option')) :  ?>col-sm-8 col-lg-9<?php endif; ?>" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -38,8 +48,10 @@
 							<?php endwhile; endif; ?>
 
 						</main>
-
-						<?php get_sidebar(); ?>
+						
+						<?php if(get_field('include_sidebar_on_site_pages', 'option')) :  ?>
+							<?php get_sidebar(); ?>
+						<?php endif; ?>
 
 				</div>
 

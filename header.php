@@ -5,7 +5,19 @@
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
-	<head>
+<!-- use these lines to implement separate head code -->
+ 
+<?php //if ( is_front_page() && is_home() ) { ?>
+   <?php //include 'head.php'; ?>
+<?php // } elseif ( is_front_page() ) { ?>
+   <?php // include 'head.php'; ?>
+<?php // } elseif ( is_home() ) { ?>
+   <?php // include 'head-index.php'; ?>
+<?php //} else { ?>
+  <?php //include 'head.php'; ?>
+<?php //} ?>
+
+<head>
 		<meta charset="utf-8">
 
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
@@ -35,7 +47,7 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+		<script src="https://kit.fontawesome.com/059e62f330.js" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 		<script>
       window.sr = ScrollReveal({ duration: 600, reset: true, easing: 'ease-in', scale: .98, distance:'50px'});

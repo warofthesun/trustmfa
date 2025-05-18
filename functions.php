@@ -271,7 +271,7 @@ function custom_fonts() {
 add_action('wp_enqueue_scripts', 'custom_fonts');
 
 
-/* Load ScrollMagic Scripts */
+/* Load ScrollMagic Scripts 
 
 function scrollmagic_scripts() {
 
@@ -293,7 +293,7 @@ function scrollmagic_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'scrollmagic_scripts' );
-
+*/
 
 
 /**

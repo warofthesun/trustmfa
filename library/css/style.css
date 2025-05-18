@@ -1477,7 +1477,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.button_pair .button:nth-child(1), .button_pair .button:nth-child(2), #menu-login-and-forms.nav li a {
+.button_pair .button:nth-child(1), .button_pair .button:nth-child(2), #menu-login-and-forms.nav li a, .gallery_item .button {
   display: inline-block;
   position: relative;
   font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1491,11 +1491,13 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), #menu-login-and-forms.nav li a:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), #menu-login-and-forms.nav li a:focus {
+  .button_pair .button:nth-child(1) .svg-inline--fa, .button_pair .button:nth-child(2) .svg-inline--fa, #menu-login-and-forms.nav li a .svg-inline--fa, .gallery_item .button .svg-inline--fa {
+    font-size: .9em; }
+  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), #menu-login-and-forms.nav li a:hover, .gallery_item .button:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), #menu-login-and-forms.nav li a:focus, .gallery_item .button:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .button_pair .button:active:nth-child(1), .button_pair .button:active:nth-child(2), #menu-login-and-forms.nav li a:active {
+  .button_pair .button:active:nth-child(1), .button_pair .button:active:nth-child(2), #menu-login-and-forms.nav li a:active, .gallery_item .button:active {
     top: 1px; }
   .button_pair .button:nth-child(1), #menu-login-and-forms.nav li a {
     color: #25250e;
@@ -1507,6 +1509,14 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   .button_pair .button:nth-child(2) {
     color: #A69E3F;
     border: 2px solid #A69E3F; }
+  .gallery_item .button {
+    color: #A69E3F;
+    border: 0px;
+    display: block; }
+    .gallery_item .button:hover, .gallery_item .button:focus {
+      color: #827D2E;
+      text-decoration: none;
+      outline: none; }
   .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), #menu-login-and-forms.nav li a:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), #menu-login-and-forms.nav li a:focus {
     color: #BFB55C;
     background: -webkit-linear-gradient(90deg, #827D2E, #646127);
@@ -2163,20 +2173,63 @@ POSTS & CONTENT STYLES
   padding-right: 5%; }
   .hero__content_text-angle {
     margin-left: -30px; }
+.hero__post_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .hero__post_text h1 {
+    font-size: 3.5em; }
+
+.gallery_item {
+  padding: 1em;
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column; }
+  .gallery_item .article-header {
+    padding: 0 1em; }
+    .gallery_item .article-header .entry-title {
+      line-height: 1;
+      margin-bottom: 1em; }
+      .gallery_item .article-header .entry-title a {
+        font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        color: #304A65;
+        font-size: .9em; }
+  .gallery_item .article-meta {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px; }
+  .gallery_item .button {
+    padding: 1em;
+    margin-top: auto; }
+
+.hero--image img {
+  border-radius: 16px;
+  border: 1px solid #A69E3F;
+  box-shadow: 0px 13px 21px -10px rgba(0, 0, 0, 0.3); }
+
+.post-category {
+  margin: 0; }
+  .post-category a {
+    text-decoration: none;
+    font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 #content {
   margin-top: 1.5em; }
 
-article .hero--image img {
-  width: 100%;
-  height: auto; }
+article {
+  justify-content: center; }
+  article .hero--image img {
+    width: 100%;
+    height: auto; }
 
 .hentry header {
   border-bottom: 1px solid #f8f9fa;
   padding: 1.5em; }
 .hentry footer {
   padding: 1.5em;
-  border-top: 1px solid #f8f9fa; }
+  border-top: 1px solid #A69E3F;
+  width: 100%; }
   .hentry footer p {
     margin: 0; }
 
@@ -2185,6 +2238,9 @@ article .hero--image img {
 .page-title,
 .entry-title {
   margin: 0; }
+
+.single-title {
+  margin: .2em 0; }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -2197,8 +2253,9 @@ article .hero--image img {
 /* style by tag (i.e. tag-news) */
 /* post meta */
 .byline {
-  color: #9fa6b4;
-  font-style: italic;
+  color: #293F56;
+  font-style: normal;
+  font-size: .8em;
   margin: 0; }
 
 /* entry content */

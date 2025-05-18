@@ -150,6 +150,16 @@
                 "param": "page_type",
                 "operator": "!=",
                 "value": "front_page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "posts_page"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
             }
         ]
     ],
@@ -161,5 +171,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1747331022
+    "modified": 1747522499
 }
