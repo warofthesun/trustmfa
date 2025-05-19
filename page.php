@@ -1,13 +1,13 @@
 <!--page-->
 <?php get_header(); ?>
 <?php if (is_front_page() ) :
-	include 'hero/hero-landing.php'; else : $hero_style = get_field('hero_style'); ?>
-	<?php if ($hero_style == 'landing'): include 'hero/hero-landing.php'; elseif ($hero_style == 'large'): ?>
-	<?php include 'hero/hero-large.php'; ?>
+	include 'partials/hero/hero-landing.php'; else : $hero_style = get_field('hero_style'); ?>
+	<?php if ($hero_style == 'landing'): include 'partials/hero/hero-landing.php'; elseif ($hero_style == 'large'): ?>
+	<?php include 'partials/hero/hero-large.php'; ?>
 	<?php elseif ($hero_style == 'medium'): ?>
-		<?php include 'hero/hero-medium.php'; ?>
+		<?php include 'partials/hero/hero-medium.php'; ?>
 	<?php elseif ($hero_style == 'small'): ?>
-		<?php include 'hero/hero-small.php'; ?>
+		<?php include 'partials/hero/hero-small.php'; ?>
 	<?php else : endif; ?>
 <?php endif; ?>
 
@@ -37,12 +37,6 @@
 
 								</section> <?php // end article section ?>
 
-								<footer class="article-footer ">
-
-								</footer>
-
-								<?php comments_template(); ?>
-
 							</article>
 
 							<?php endwhile; endif; ?>
@@ -56,5 +50,4 @@
 				</div>
 
 			</div>
-
 <?php get_footer(); ?>

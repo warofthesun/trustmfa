@@ -1,4 +1,5 @@
-			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+<?php if(get_field('include_testimonials')): include 'partials/testimonials.php'; endif; ?>
+<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div id="inner-footer" class="wrap  row">
 

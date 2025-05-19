@@ -1978,11 +1978,14 @@ h2, .h2 {
   font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 2em;
+  line-height: 1.1;
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 h4, .h4 {
   font-size: 1.1em;
-  font-weight: 700; }
+  font-weight: 700;
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 h5, .h5 {
   font-size: 0.846em;
@@ -2216,6 +2219,38 @@ POSTS & CONTENT STYLES
 
 #content {
   margin-top: 1.5em; }
+
+.testimonials__background_white {
+  background: linear-gradient(rgba(245, 246, 247, 0.8), rgba(245, 246, 247, 0.5)), url("../images/pattern_circle.png") repeat left top; }
+  .testimonials__background_white .testimonials__content {
+    flex-direction: column;
+    margin-bottom: 2em;
+    padding-bottom: 2em; }
+  .testimonials__background_white h3, .testimonials__background_white h4 {
+    text-align: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto; }
+    .testimonials__background_white h3::before, .testimonials__background_white h4::before {
+      content: "";
+      background-image: url(../images/marker/quote.png);
+      display: block;
+      height: 58px;
+      width: 58px;
+      margin: auto; }
+  .testimonials__background_white .attribution {
+    background: -webkit-linear-gradient(90deg, #BFB55C, #A69E3F);
+    background: -moz-linear-gradient(90deg, #BFB55C, #A69E3F);
+    background: -o-linear-gradient(90deg, #BFB55C, #A69E3F);
+    background: linear-gradient(90deg, #BFB55C, #A69E3F);
+    display: inline-block;
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #F9F7EC;
+    margin: auto; }
 
 article {
   justify-content: center; }
