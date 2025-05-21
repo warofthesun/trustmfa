@@ -1,6 +1,6 @@
 <!--index-->
 <?php get_header(); ?>
-<?php include 'hero/hero-small.php'; ?>
+<?php include 'partials/hero/hero-small.php'; ?>
 			<div id="content">
 
 				<div id="inner-content" class="wrap row">

@@ -454,8 +454,11 @@ http://sachagreif.com/sass-color-variables/
 /******************************************************************
 Stylesheet: Tokens
 *********************/
-body, .hentry {
+body, .testimonials__background_gold::before, .hentry {
   background-color: #F5F6F7; }
+
+.testimonials__multi {
+  border-radius: 0.5em; }
 
 /******************************************************************
 Site Name:
@@ -1972,10 +1975,22 @@ h1, .h1 {
   color: #A2B4C7; }
 
 h2, .h2 {
-  font-size: 1.75em;
+  font-size: 2.48em;
   line-height: 1.4em;
+  margin-top: 0;
   margin-bottom: 0.375em;
-  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+  color: #304A65; }
+  h2.has-text-align-center::after, .h2.has-text-align-center::after {
+    margin-left: auto;
+    margin-right: auto; }
+  h2::after, .h2::after {
+    content: "";
+    display: block;
+    margin-top: 0.25em;
+    height: 4px;
+    width: 100px;
+    background-color: #A69E3F; }
 
 h3, .h3 {
   font-size: 2em;
@@ -1983,15 +1998,17 @@ h3, .h3 {
   font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 h4, .h4 {
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: 700;
   font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif; }
 
 h5, .h5 {
-  font-size: 0.846em;
-  line-height: 2.09em;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
+  font-size: 1.2em;
+  line-height: 1.6em;
+  text-transform: normal;
+  font-weight: 500;
+  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0E151D; }
 
 /*********************
 HEADER STYLES
@@ -2116,16 +2133,16 @@ POSTS & CONTENT STYLES
       text-transform: uppercase;
       font-size: .4em;
       line-height: 1.1; }
-  .hero__container_landing h2 {
+  .hero__container_landing h3 {
     margin-top: 0; }
-    .hero__container_landing h2 ul {
+    .hero__container_landing h3 ul {
       font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
       margin: 0; }
-      .hero__container_landing h2 ul li {
+      .hero__container_landing h3 ul li {
         display: inline-block;
         color: #A69E3F;
         font-weight: 800; }
-        .hero__container_landing h2 ul li:nth-child(1):after, .hero__container_landing h2 ul li:nth-child(2):after {
+        .hero__container_landing h3 ul li:nth-child(1):after, .hero__container_landing h3 ul li:nth-child(2):after {
           content: " • ";
           color: #8FA5BC; }
   .hero__container_landing .hero__content {
@@ -2172,10 +2189,10 @@ POSTS & CONTENT STYLES
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 10%;
+  padding-left: 7%;
   padding-right: 5%; }
   .hero__content_text-angle {
-    margin-left: -30px; }
+    margin-left: -90px; }
 .hero__post_text {
   display: flex;
   flex-direction: column;
@@ -2220,37 +2237,79 @@ POSTS & CONTENT STYLES
 #content {
   margin-top: 1.5em; }
 
-.testimonials__background_white {
-  background: linear-gradient(rgba(245, 246, 247, 0.8), rgba(245, 246, 247, 0.5)), url("../images/pattern_circle.png") repeat left top; }
-  .testimonials__background_white .testimonials__content {
+.testimonials {
+  margin-bottom: 2em; }
+  .testimonials__background_white {
+    background: linear-gradient(rgba(245, 246, 247, 0.8), rgba(245, 246, 247, 0.5)), url("../images/pattern_circle.png") repeat left top; }
+    .testimonials__background_white .attribution {
+      background: -webkit-linear-gradient(45deg, #BFB55C, #A69E3F);
+      background: -moz-linear-gradient(45deg, #BFB55C, #A69E3F);
+      background: -o-linear-gradient(45deg, #BFB55C, #A69E3F);
+      background: linear-gradient(45deg, #BFB55C, #A69E3F);
+      color: #F9F7EC; }
+  .testimonials__background_gold {
+    background: url("../images/pattern_circle.png") repeat left top, linear-gradient(#D3CA83, #BFB55C);
+    border-top: 2px solid #A69E3F;
+    border-bottom: 2px solid #827D2E;
+    display: flex;
     flex-direction: column;
-    margin-bottom: 2em;
+    box-shadow: inset 0 8px 10px -10px rgba(69, 68, 34, 0.7); }
+    .testimonials__background_gold .attribution {
+      background: -webkit-linear-gradient(45deg, #456990, #293F56);
+      background: -moz-linear-gradient(45deg, #456990, #293F56);
+      background: -o-linear-gradient(45deg, #456990, #293F56);
+      background: linear-gradient(45deg, #456990, #293F56);
+      color: #C7D2DE; }
+    .testimonials__background_gold h3, .testimonials__background_gold h4 {
+      color: #293F56; }
+    .testimonials__background_gold::before {
+      content: "What our clients say";
+      font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+      font-size: 2em;
+      line-height: 1;
+      border-radius: 0 0 20px 20px;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -5px;
+      padding: 0 1em .5em 1em;
+      box-shadow: 0px 3px 0px #A69E3F, 0 8px 10px -10px rgba(69, 68, 34, 0.7); }
+  .testimonials.testimonial__count_1 .testimonials__content {
+    flex-direction: column;
     padding-bottom: 2em; }
-  .testimonials__background_white h3, .testimonials__background_white h4 {
+  .testimonials.testimonial__count_1 h3, .testimonials.testimonial__count_1 h4 {
     text-align: center;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto; }
-    .testimonials__background_white h3::before, .testimonials__background_white h4::before {
+    .testimonials.testimonial__count_1 h3::before, .testimonials.testimonial__count_1 h4::before {
       content: "";
       background-image: url(../images/marker/quote.png);
       display: block;
       height: 58px;
       width: 58px;
       margin: auto; }
-  .testimonials__background_white .attribution {
-    background: -webkit-linear-gradient(90deg, #BFB55C, #A69E3F);
-    background: -moz-linear-gradient(90deg, #BFB55C, #A69E3F);
-    background: -o-linear-gradient(90deg, #BFB55C, #A69E3F);
-    background: linear-gradient(90deg, #BFB55C, #A69E3F);
+  .testimonials.testimonial__count_1 .attribution {
     display: inline-block;
     border-radius: 20px;
     padding: 4px 16px;
     font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 1.2em;
-    color: #F9F7EC;
     margin: auto; }
+  .testimonials__multi {
+    background-color: #fff;
+    padding: 0;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #A69E3F; }
+    .testimonials__multi h3 {
+      font-size: 1em;
+      margin: 0; }
+      .testimonials__multi h3 p {
+        padding: 0;
+        margin: 0; }
 
 article {
   justify-content: center; }
@@ -2413,6 +2472,81 @@ article {
 /* gallery caption styles */
 .tags {
   margin: 0; }
+
+.faq.open .faq_question {
+  margin-bottom: 1em; }
+
+#faq_container {
+  margin-bottom: 2em;
+  padding: 10px 15px;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  box-shadow: 0px 3px 0px #A69E3F, 0 8px 10px -10px rgba(69, 68, 34, 0.7);
+  background-color: #fff; }
+
+.faq_question {
+  margin: 0px;
+  padding: 0px 0px 5px 0px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  display: table;
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+  font-size: 1.3em;
+  font-weight: 500;
+  line-height: 1.1; }
+
+.question {
+  margin-bottom: 5px;
+  display: table-cell;
+  width: 100%;
+  padding-right: 2em; }
+
+.faq_answer_container {
+  height: 0px;
+  overflow: hidden;
+  padding: 0px; }
+
+.accordion-button-icon {
+  display: table-cell;
+  line-height: inherit;
+  color: #A69E3F;
+  padding-left: 15px;
+  vertical-align: middle; }
+
+.partners__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .partners__container_highlighted {
+    justify-content: space-around;
+    border-radius: 0.75em;
+    background: -webkit-linear-gradient(0deg, #A2B4C7, #C7D2DE);
+    background: -moz-linear-gradient(0deg, #A2B4C7, #C7D2DE);
+    background: -o-linear-gradient(0deg, #A2B4C7, #C7D2DE);
+    background: linear-gradient(0deg, #A2B4C7, #C7D2DE);
+    margin-bottom: 1.5em; }
+    .partners__container_highlighted .partners {
+      margin: 2em; }
+  .partners__container .partners {
+    background: #fff;
+    border-radius: 0.75em;
+    box-shadow: 0px 13px 21px -10px rgba(0, 0, 0, 0.3);
+    width: 220px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    margin-right: auto;
+    margin-left: auto; }
+    .partners__container .partners img {
+      width: 100%;
+      max-width: 120px;
+      height: auto; }
+.partners .callout_text {
+  margin: 2em; }
 
 /******************************************************************
 PAGE NAVI STYLES

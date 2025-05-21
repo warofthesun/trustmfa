@@ -163,10 +163,28 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 1.75em;
+	font-size: 2.48em;
 	line-height: 1.4em;
+	margin-top: 0;
 	margin-bottom: 0.375em;
 	font-family: $serif;
+	color: $primary-600;
+
+	&.has-text-align-center {
+		&::after {
+		margin-left: auto;
+		margin-right: auto;
+		}
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		margin-top: $spacing-xxs;
+		height: 4px;
+		width: 100px;
+		background-color: $secondary-500;
+	}
 }
 
 h3, .h3 {
@@ -176,17 +194,21 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	font-size: 1.1em;
+	font-size: 1.5em;
 	font-weight: 700;
 	font-family: $serif;
 }
 
 h5, .h5 {
-	font-size: 0.846em;
-	line-height: 2.09em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	font-size: 1.2em;
+	line-height: 1.6em;
+	text-transform: normal;
+	font-weight: 500;
+	font-family: $sans-serif;
+	color: $primary-900;
 }
+
+
 
 /*********************
 HEADER STYLES
@@ -400,7 +422,7 @@ POSTS & CONTENT STYLES
 			}
 				}
 
-			h2 {
+			h3 {
 				margin-top: 0;
 				ul {
 				font-family: $sans-serif;
@@ -499,11 +521,11 @@ POSTS & CONTENT STYLES
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				padding-left: 10%;
+				padding-left: 7%;
 				padding-right: 5%;
 
 				&-angle {
-					margin-left: -30px;
+					margin-left: -90px;
 				}
 			}
 
@@ -583,13 +605,58 @@ POSTS & CONTENT STYLES
 }
 
 .testimonials {
+	margin-bottom: 2em;
 	&__background {
 		&_white {
 			@include pattern_overlay;
 
-			.testimonials__content {
+			.attribution {
+				@include gradient(45deg, $secondary-two_stops);
+				color: $secondary-50;
+			}
+		}
+
+		&_gold {
+			@include gold_overlay_gradient_light;
+			border-top: 2px solid $secondary-500;
+			border-bottom: 2px solid $secondary-600;
+			display: flex;
+			flex-direction: column;
+			box-shadow: inset 0 8px 10px -10px rgba($secondary-900, 0.7);
+
+			.attribution {
+				@include gradient(45deg, $primary-two_stops__dark);
+				color: $primary-50;
+			}
+
+			h3, h4 {
+				color: $primary-700;
+			}
+
+			&::before {
+					content: "What our clients say";
+					@extend %content_background__primary;
+					font-family: $serif;
+					font-size: 2em;
+					line-height: 1;
+					border-radius: 0 0 20px 20px;
+					display: inline-block;
+					margin-left: auto;
+					margin-right: auto;
+					margin-top: -5px;
+					padding: 0 1em .5em 1em;
+					box-shadow: 0px 3px 0px $secondary-500, 0 8px 10px -10px rgba($secondary-900, 0.7);
+
+				}
+
+		}
+	}
+
+	&.testimonial {
+		&__count {
+			&_1 {
+				.testimonials__content {
 				flex-direction: column;
-				margin-bottom: 2em;
 				padding-bottom: 2em;
 			}
 
@@ -610,15 +677,35 @@ POSTS & CONTENT STYLES
 			}
 
 			.attribution {
-				@include gradient(90deg, $secondary-two_stops);
 				display: inline-block;
 				border-radius: 20px;
 				padding: 4px 16px;
 				font-family: $sans-serif;
 				font-weight: 700;
 				font-size: 1.2em;
-				color: $secondary-50;
 				margin: auto;
+			}
+			}
+		}
+	}
+
+	&__multi {
+		background-color: $white;
+		@extend %border-radius-sm;
+		padding: 0;
+		justify-content: space-between;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid $secondary-500;
+
+		h3 {
+			font-size: 1em;
+			margin: 0;
+
+
+			p {
+				padding: 0;
+				margin: 0;
 			}
 		}
 	}
@@ -915,9 +1002,104 @@ article {
 	.tags {
 		margin: 0;
 	}
+// FAQ
 
+.faq {
+	&.open {
+		.faq_question {
+			margin-bottom: 1em;
+		}
+	}
+}
+#faq_container {
+	margin-bottom: 2em;
+	padding: 10px 15px;
+	max-width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 8px;
+	box-shadow: 0px 3px 0px $secondary-500, 0 8px 10px -10px rgba($secondary-900, 0.7);
+	background-color: $white;
+}
 
+.faq_question {
+  margin: 0px;
+  padding: 0px 0px 5px 0px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  display: table;
+  font-family: $serif;
+  font-size: 1.3em;
+  font-weight: 500;
+  line-height: 1.1;
+}
 
+.question {
+  margin-bottom: 5px;
+  display: table-cell;
+  width: 100%;
+  padding-right: 2em;
+}
+ 
+.faq_answer_container {
+  height: 0px;
+  overflow: hidden;
+  padding: 0px;
+}
+
+.accordion-button-icon {
+  display: table-cell;
+  line-height: inherit;
+  color: $secondary-500;
+  padding-left: 15px;
+  vertical-align: middle;
+}
+
+/// END FAQs
+
+// PARTNERS
+.partners {
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+		&_highlighted {
+			justify-content: space-around;
+			border-radius: $radius-md;
+			@include gradient(0deg, $primary-100, $primary-50);
+			margin-bottom: $spacing-xl;
+
+			.partners {
+				margin: $spacing-xxl;
+			}
+		}
+
+		.partners {
+			background: $white;
+			border-radius: $radius-md;
+			@include box-shadow($bottom-diffused);
+			width: 220px;
+			height: 150px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: $spacing-xxl;
+			margin-right: auto;
+			margin-left: auto;
+			
+			img {
+				width: 100%;
+				max-width: 120px;
+				height: auto;
+
+			}
+		}
+	}
+	.callout_text {
+		margin: $spacing-xxl;
+	}
+}
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/

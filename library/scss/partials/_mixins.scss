@@ -59,6 +59,7 @@ really slow down your CSS. Don't overdo it.
 $secondary-two_stops: $secondary-400, $secondary-500; 
 $secondary-two_stops_reverse: $secondary-500, $secondary-400; 
 
+$primary-two_stops__light: $primary-200, $primary-400;
 $primary-two_stops__dark: $primary-500, $primary-700;
 $primary-two_stops__dark_reverse: $primary-700, $primary-500;
 
@@ -77,6 +78,10 @@ $primary-two_stops__dark_reverse: $primary-700, $primary-500;
 
 @mixin gold_overlay_gradient() {
 	background: url("../images/pattern_circle.png") repeat left top, linear-gradient($secondary-300, $secondary-500);
+}
+
+@mixin gold_overlay_gradient_light() {
+	background: url("../images/pattern_circle.png") repeat left top, linear-gradient($secondary-300, $secondary-400);
 }
 
 @mixin pattern_overlay() {

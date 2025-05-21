@@ -21,19 +21,23 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-								<header class="article-header">
+								<!--header class="article-header">
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
 									<p class="byline vcard">
-										<?php printf( __( 'Posted', 'trustmfa_theme').' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.__( 'by',  'trustmfa_theme').' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+										<?php //printf( __( 'Posted', 'trustmfa_theme').' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.__( 'by',  'trustmfa_theme').' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
 									</p>
 
-								</header> <?php // end article header ?>
+								</header--> <?php // end article header ?>
 
 								<section class="entry-content " itemprop="articleBody">
 
 									<?php the_content(); ?>
+
+									<?php if( have_rows('faqs') ): ?>
+									<?php include 'partials/faqs.php'; ?>
+									<?php endif; ?>
 
 								</section> <?php // end article section ?>
 

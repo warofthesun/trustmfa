@@ -6,3 +6,7 @@ Stylesheet: Tokens
 %content_background__primary {
     background-color: $grey-10;
 }
+
+%border-radius-sm {
+    border-radius: $spacing-sm;
+}
