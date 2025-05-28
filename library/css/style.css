@@ -2193,6 +2193,8 @@ POSTS & CONTENT STYLES
   padding-right: 5%; }
   .hero__content_text-angle {
     margin-left: -90px; }
+    .hero__content_text-angle svg {
+      margin-left: -110px; }
 .hero__post_text {
   display: flex;
   flex-direction: column;
@@ -2209,7 +2211,11 @@ POSTS & CONTENT STYLES
     padding: 0 1em; }
     .gallery_item .article-header .entry-title {
       line-height: 1;
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      font-size: 1.5em; }
+      .gallery_item .article-header .entry-title::after {
+        content: "";
+        display: none; }
       .gallery_item .article-header .entry-title a {
         font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 700;
@@ -2548,6 +2554,41 @@ article {
 .partners .callout_text {
   margin: 2em; }
 
+.services {
+  max-width: 1050px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto; }
+  .services .service {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em; }
+    .services .service img {
+      width: 44px;
+      height: 44px; }
+    .services .service__text {
+      width: 90%;
+      padding-left: 1em;
+      padding-right: 1em;
+      color: #293F56; }
+
+.resources {
+  columns: 2; }
+  .resources .resourse__item .resource__link {
+    text-decoration: none;
+    display: block; }
+    .resources .resourse__item .resource__link .h4 {
+      display: inline-block;
+      margin-bottom: 0.25em;
+      margin-left: 0.25em; }
+      .resources .resourse__item .resource__link .h4::before {
+        content: "hey "; }
+  .resources .resourse__item .resource__description {
+    margin-left: 2em;
+    display: inline-block; }
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -2754,8 +2795,34 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #000;
+  background-color: #304A65;
   color: #f8f9fa; }
+  .footer__logo {
+    display: flex;
+    align-items: flex-end; }
+  .footer__curve {
+    background: url("../images/footer_gold.svg") no-repeat, linear-gradient(#F5F6F7);
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    display: flex; }
+
+.footer__tagline p {
+  padding: 0;
+  margin: 0; }
+.footer__tagline em {
+  font-style: normal;
+  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.5em; }
+.footer__tagline strong {
+  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+  color: #A69E3F;
+  font-size: 2.5em; }
+
+#inner-footer {
+  background-color: #304A65; }
 
 /*
 if you checked out the link above:

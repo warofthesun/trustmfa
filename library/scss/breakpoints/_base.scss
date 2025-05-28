@@ -180,7 +180,7 @@ h2, .h2 {
 	&::after {
 		content: "";
 		display: block;
-		margin-top: $spacing-xxs;
+		margin-top: $spacing-xs;
 		height: 4px;
 		width: 100px;
 		background-color: $secondary-500;
@@ -526,6 +526,10 @@ POSTS & CONTENT STYLES
 
 				&-angle {
 					margin-left: -90px;
+
+					svg {
+						margin-left: -110px;
+					}
 				}
 			}
 
@@ -558,6 +562,12 @@ POSTS & CONTENT STYLES
 			.entry-title {
 				line-height: 1;
 				margin-bottom: 1em;
+				font-size: 1.5em;
+
+				&::after {
+					content: "";
+					display: none;
+				}
 
 				a {
 					font-family: $sans-serif;
@@ -1100,6 +1110,67 @@ article {
 		margin: $spacing-xxl;
 	}
 }
+
+//SERVICES 
+.services {
+	max-width: 1050px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	margin-top: 3em;
+	margin-left: auto;
+	margin-right: auto;
+
+	.service {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 2em;
+
+
+		img {
+			width: 44px;
+			height: 44px;
+		}
+
+		&__text {
+			width: 90%;
+			padding-left: 1em;
+			padding-right: 1em;
+			color: $primary-700;
+		}
+	}
+}
+
+//RESOURCES
+
+.resources {
+	//display: grid;
+  	//grid-template-columns: 50% 50%;
+	//column-gap: 50px;
+	columns: 2;
+	
+	.resourse__item {
+		
+		.resource__link {
+			text-decoration: none;
+			display: block;
+			.h4 {
+				display: inline-block;
+				margin-bottom: $spacing-xs;
+				margin-left: $spacing-xs;
+
+				&::before {
+					content: "hey ";
+				}
+			}
+		}
+
+		.resource__description {
+			margin-left: $spacing-xxl;
+			display: inline-block;
+		}
+	}
+}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -1474,8 +1545,49 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
+	background-color: $primary-600;
 	color: $light-gray;
+
+	&__logo {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	&__curve {
+		background: url("../images/footer_gold.svg") no-repeat, linear-gradient($primary-surface);
+		height: 170px;
+		background-size: cover;
+		background-position: center;
+		display: flex;
+	}
+}
+
+
+	.footer__tagline {
+		p {
+			padding: 0;
+			margin: 0;
+		}
+
+		em {
+			font-style: normal;
+			font-family: $sans-serif;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 1.5em;
+		}
+
+		strong {
+			font-family: $serif;
+			color: $secondary-500;
+			font-size: 2.5em;
+		}
+	}
+
+#inner-footer {
+	background-color: $primary-600;
+
+	
 }
 
 	/*

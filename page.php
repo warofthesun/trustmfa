@@ -35,9 +35,11 @@
 
 									<?php the_content(); ?>
 
-									<?php if( have_rows('faqs') ): ?>
-									<?php include 'partials/faqs.php'; ?>
-									<?php endif; ?>
+									<?php if( have_rows('faqs') ): include 'partials/faqs.php'; endif; ?>
+
+									<?php if( have_rows('services') ): include 'partials/services.php'; endif; ?>
+
+									<?php if(have_rows('resources')) : include 'partials/resources.php'; endif; ?>
 
 								</section> <?php // end article section ?>
 

@@ -1,8 +1,12 @@
 <?php if(get_field('include_testimonials')): include 'partials/testimonials.php'; endif; ?>
+<div class="footer__tagline"><?php the_field('footer_tagline', 'option'); ?> </div>
 <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-
-				<div id="inner-footer" class="wrap  row">
-
+	
+<div class="footer__curve">
+	<div class="footer__logo wrap"><?php echo file_get_contents( get_template_directory() . '/library/images/mfa_logo_dark.svg' ); ?></div>
+</div>
+				<div id="inner-footer" class="wrap row">
+					
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
     					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
@@ -19,7 +23,7 @@
 						)); ?>
 					</nav>
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<!--p class="source-org copyright">&copy; <?php //echo date('Y'); ?> <?php //bloginfo( 'name' ); ?>.</p-->
 
 				</div>
 
