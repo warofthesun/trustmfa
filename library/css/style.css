@@ -2192,9 +2192,9 @@ POSTS & CONTENT STYLES
   padding-left: 7%;
   padding-right: 5%; }
   .hero__content_text-angle {
-    margin-left: -90px; }
+    padding-left: 0; }
     .hero__content_text-angle svg {
-      margin-left: -110px; }
+      margin-left: -5px; }
 .hero__post_text {
   display: flex;
   flex-direction: column;

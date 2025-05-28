@@ -2,20 +2,6 @@
 <div class="hero__container hero__container_landing">
 	<div class="hero__container_inner row">
 		<div class="hero__content hero__content_image col-xs-12 row"  style="background-image: url('<?php if( get_field('hero_image') ) : the_field('hero_image');  endif; ?>')">
-		<!--svg width="175" height="100%" class="curve_overlay__blue" viewBox="0 0 175 626" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<defs>
-			<linearGradient id="dark_primary_gradient" x1="0" x2="0" y1="1" y2="0">
-				<stop class="dark_primary_gradient__stop-1" offset="0%" />
-				<stop class="dark_primary_gradient__stop-2" offset="100%" />
-			</linearGradient>
-		</defs>
-		<style>
-			svg {
-					filter: drop-shadow(-10px 5px 10px rgb(0 0 0 / 0.4));
-				}
-		</style>
-		<path class="curve_overlay__blue" d="M122.5 0L175 0V626H2C2 626 -18 605.5 69 465C156 324.5 122.5 0 122.5 0Z" fill="url(#dark_primary_gradient)" />
-		</svg-->
 		<div class="hero__content hero__content_text col-xs-12 col-md-6">
 			<div><?php if( get_field('hero_headline') ) : the_field('hero_headline');  endif; ?></div>
 			<p><?php if( get_field('hero_paragraph') ) : the_field('hero_paragraph');  endif; ?></p>

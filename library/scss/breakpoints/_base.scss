@@ -446,6 +446,7 @@ POSTS & CONTENT STYLES
 			.hero__content {
 				height: 750px;
 			}
+
 		}
 
 		&_large {
@@ -525,10 +526,10 @@ POSTS & CONTENT STYLES
 				padding-right: 5%;
 
 				&-angle {
-					margin-left: -90px;
+					padding-left: 0;
 
 					svg {
-						margin-left: -110px;
+						margin-left: -5px;
 					}
 				}
 			}
