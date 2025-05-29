@@ -14,8 +14,11 @@
 			<div id="content">
 
 				<div id="inner-content" class="wrap  row">
-
-						<main id="main" class="col-xs-12 <?php if(get_field('include_sidebar_on_site_pages', 'option')) :  ?>col-sm-8 col-lg-9<?php endif; ?>" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<?php 
+						$testimonial = get_field('include_sidebar_testimonials');
+						$sidebar = get_field('include_sidebar_on_site_pages');
+						?>
+						<main id="main" class="col-xs-12 <?php if($testimonial || $sidebar) :  ?>col-sm-8<?php endif; ?>" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -49,9 +52,9 @@
 
 						</main>
 
-						<?php if(get_field('include_sidebar_testimonials')) : ?>
-						<?php get_sidebar('testimonials'); ?>	
-						<?php elseif(get_field('include_sidebar_on_site_pages', 'option')) :  ?>
+						<?php if($testimonial) : ?>
+							<?php include 'partials/testimonials/testimonials-sidebar.php' ?>	
+						<?php elseif($sidebar) :  ?>
 							<?php get_sidebar(); ?>
 						<?php endif; ?>
 

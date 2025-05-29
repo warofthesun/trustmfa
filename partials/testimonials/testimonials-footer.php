@@ -1,4 +1,4 @@
-<!--testimonials-->
+<!--testimonials-footer-->
 <?php $count = get_field('testimonial_count');?>
 	<?php $query = new WP_Query( [
     'post_type'      => 'testimonials',
