@@ -2664,8 +2664,6 @@ article {
       display: inline-block;
       margin-bottom: 0.25em;
       margin-left: 0.25em; }
-      .resources .resourse__item .resource__link .h4::before {
-        content: "hey "; }
   .resources .resourse__item .resource__description {
     margin-left: 2em;
     display: inline-block; }
