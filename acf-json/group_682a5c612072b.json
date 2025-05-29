@@ -1,11 +1,11 @@
 {
     "key": "group_682a5c612072b",
-    "title": "Testimonial Block",
+    "title": "Testimonials - Footer",
     "fields": [
         {
             "key": "field_682b78683eb1e",
-            "label": "Include Testimonials",
-            "name": "include_testimonials",
+            "label": "Include Footer Testimonials",
+            "name": "include_footer_testimonials",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -132,8 +132,13 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "discussion",
+        "comments",
+        "format",
+        "featured_image"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1747685620
+    "modified": 1748469160
 }

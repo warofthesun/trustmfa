@@ -48,8 +48,10 @@
 							<?php endwhile; endif; ?>
 
 						</main>
-						
-						<?php if(get_field('include_sidebar_on_site_pages', 'option')) :  ?>
+
+						<?php if(get_field('include_sidebar_testimonials')) : ?>
+						<?php get_sidebar('testimonials'); ?>	
+						<?php elseif(get_field('include_sidebar_on_site_pages', 'option')) :  ?>
 							<?php get_sidebar(); ?>
 						<?php endif; ?>
 

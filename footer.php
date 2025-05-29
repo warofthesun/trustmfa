@@ -1,4 +1,4 @@
-<?php if(get_field('include_testimonials')): include 'partials/testimonials.php'; endif; ?>
+<?php if(get_field('include_footer_testimonials')): include 'partials/testimonials.php'; endif; ?>
 <div class="footer__tagline"><?php the_field('footer_tagline', 'option'); ?> </div>
 <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 	

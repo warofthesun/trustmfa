@@ -445,16 +445,33 @@ POSTS & CONTENT STYLES
 
 			.hero__content {
 				height: 750px;
+
+				&_text {
+					@include gradient(0deg, $primary-700, $primary-500);
+					position: initial;
+				}
+
+				&_text-angle {
+					margin-left: -50px;
+				}
 			}
 
 		}
 
 		&_large {
 			.hero__content {
-				height: 550px;
+				height: 753px;
 
 				&_text {
 					justify-content: flex-end;
+				}
+
+				&_text-angle {
+					svg {
+						width: 753px;
+						margin-left: 0;
+						height: 104%;
+					}
 				}
 			}
 		}
@@ -471,6 +488,7 @@ POSTS & CONTENT STYLES
 
 		&_small {
 			@include gold_overlay_gradient();
+			height: 250px;
 
 			.hero__content {
 				background-color: white;
@@ -478,6 +496,9 @@ POSTS & CONTENT STYLES
 
 			.hero__content_text {
 				background: none;
+				padding: 0;
+				width: 100%;
+				left: 0;
 
 				h1 {
 					color: $secondary-50;
@@ -487,12 +508,19 @@ POSTS & CONTENT STYLES
 			}
 
 			.header_curve_lower {
-				margin-top: -120px;
+				height: 240px;
+				position: relative;
+
+				svg {
+					position:absolute;
+					bottom: 0;
+				}
 			}
 
 			.content_curve__outer svg {
-				margin-top: -90px;
-				margin-bottom: -20px;
+				position: absolute;
+				width: 100%;
+				top: 220px;
 			}
 			
 		}
@@ -518,7 +546,7 @@ POSTS & CONTENT STYLES
 			}
 
 			&_text {
-				@include gradient(0deg, $primary-700, $primary-500);
+				position: absolute;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -529,7 +557,9 @@ POSTS & CONTENT STYLES
 					padding-left: 0;
 
 					svg {
-						margin-left: -5px;
+						margin-left: -10px;
+						width: 928px;
+						height: 109%;
 					}
 				}
 			}

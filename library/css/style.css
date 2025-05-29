@@ -2147,29 +2147,50 @@ POSTS & CONTENT STYLES
           color: #8FA5BC; }
   .hero__container_landing .hero__content {
     height: 750px; }
+    .hero__container_landing .hero__content_text {
+      background: -webkit-linear-gradient(0deg, #293F56, #456990);
+      background: -moz-linear-gradient(0deg, #293F56, #456990);
+      background: -o-linear-gradient(0deg, #293F56, #456990);
+      background: linear-gradient(0deg, #293F56, #456990);
+      position: initial; }
+    .hero__container_landing .hero__content_text-angle {
+      margin-left: -50px; }
   .hero__container_large .hero__content {
-    height: 550px; }
+    height: 753px; }
     .hero__container_large .hero__content_text {
       justify-content: flex-end; }
+    .hero__container_large .hero__content_text-angle svg {
+      width: 753px;
+      margin-left: 0;
+      height: 104%; }
   .hero__container_medium .hero__content {
     height: 400px; }
     .hero__container_medium .hero__content_text {
       justify-content: flex-end; }
   .hero__container_small {
-    background: url("../images/pattern_circle.png") repeat left top, linear-gradient(#D3CA83, #A69E3F); }
+    background: url("../images/pattern_circle.png") repeat left top, linear-gradient(#D3CA83, #A69E3F);
+    height: 250px; }
     .hero__container_small .hero__content {
       background-color: white; }
     .hero__container_small .hero__content_text {
-      background: none; }
+      background: none;
+      padding: 0;
+      width: 100%;
+      left: 0; }
       .hero__container_small .hero__content_text h1 {
         color: #F9F7EC;
         text-align: center;
         text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.23); }
     .hero__container_small .header_curve_lower {
-      margin-top: -120px; }
+      height: 240px;
+      position: relative; }
+      .hero__container_small .header_curve_lower svg {
+        position: absolute;
+        bottom: 0; }
     .hero__container_small .content_curve__outer svg {
-      margin-top: -90px;
-      margin-bottom: -20px; }
+      position: absolute;
+      width: 100%;
+      top: 220px; }
   .hero__container_inner {
     max-width: 1440px;
     margin: auto; }
@@ -2182,10 +2203,7 @@ POSTS & CONTENT STYLES
   border-right: 2px solid #A69E3F;
   box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
 .hero__content_text {
-  background: -webkit-linear-gradient(0deg, #293F56, #456990);
-  background: -moz-linear-gradient(0deg, #293F56, #456990);
-  background: -o-linear-gradient(0deg, #293F56, #456990);
-  background: linear-gradient(0deg, #293F56, #456990);
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2194,7 +2212,9 @@ POSTS & CONTENT STYLES
   .hero__content_text-angle {
     padding-left: 0; }
     .hero__content_text-angle svg {
-      margin-left: -5px; }
+      margin-left: -10px;
+      width: 928px;
+      height: 109%; }
 .hero__post_text {
   display: flex;
   flex-direction: column;
