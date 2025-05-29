@@ -25,7 +25,7 @@
             "key": "field_682a5c67a423b",
             "label": "Choose Testimonial(s)",
             "name": "choose_testimonials",
-            "type": "post_object",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -46,41 +46,11 @@
                 "testimonials"
             ],
             "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
-        },
-        {
-            "key": "field_682b78fa3eb1f",
-            "label": "Testimonial Count",
-            "name": "testimonial_count",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_682b78683eb1e",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "1": "One",
-                "2": "Two",
-                "3": "Three"
-            },
-            "allow_null": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value"
+            "filters": "",
+            "elements": "",
+            "min": "",
+            "max": 3,
+            "return_format": "object"
         },
         {
             "key": "field_682b7b103eb20",
@@ -89,20 +59,7 @@
             "type": "button_group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_682b78683eb1e",
-                        "operator": "==",
-                        "value": "1"
-                    },
-                    {
-                        "field": "field_682b78fa3eb1f",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -140,5 +97,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1748469160
+    "modified": 1748552743
 }

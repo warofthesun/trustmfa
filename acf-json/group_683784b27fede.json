@@ -25,7 +25,7 @@
             "key": "field_683784b28356e",
             "label": "Choose Testimonial(s)",
             "name": "choose_sidebar_testimonials",
-            "type": "post_object",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -46,10 +46,11 @@
                 "testimonials"
             ],
             "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
+            "filters": "",
+            "elements": "",
+            "min": "",
+            "max": 3,
+            "return_format": "object"
         }
     ],
     "location": [
@@ -69,5 +70,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1748469178
+    "modified": 1748552791
 }

@@ -6,7 +6,7 @@
             "key": "field_68260aefb86c7",
             "label": "Hero Style",
             "name": "hero_style",
-            "type": "button_group",
+            "type": "select",
             "instructions": "Select hero size",
             "required": 0,
             "conditional_logic": 0,
@@ -22,10 +22,13 @@
                 "large": "Large - Large image and page title",
                 "landing": "Landing - Extra large with content area"
             },
+            "default_value": [],
             "allow_null": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value"
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
         },
         {
             "key": "field_68261ac5504a3",
@@ -169,12 +172,14 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "featured_image"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1747606451
+    "modified": 1748552984
 }

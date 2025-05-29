@@ -457,9 +457,6 @@ Stylesheet: Tokens
 body, .testimonials__background_gold::before, .hentry {
   background-color: #F5F6F7; }
 
-.testimonials__multi {
-  border-radius: 0.5em; }
-
 /******************************************************************
 Site Name:
 Author:
@@ -2304,6 +2301,73 @@ POSTS & CONTENT STYLES
       margin-top: -5px;
       padding: 0 1em .5em 1em;
       box-shadow: 0px 3px 0px #A69E3F, 0 8px 10px -10px rgba(69, 68, 34, 0.7); }
+  .testimonials__content {
+    justify-content: space-between; }
+    .testimonials__content .testimonial {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto; }
+      .testimonials__content .testimonial .quote_mark {
+        display: none; }
+      .testimonials__content .testimonial h3 {
+        text-align: center;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto; }
+        .testimonials__content .testimonial h3::before {
+          content: "";
+          background-image: url(../images/marker/quote.png);
+          display: block;
+          height: 58px;
+          width: 58px;
+          margin: auto; }
+      .testimonials__content .testimonial .attribution {
+        display: inline-block;
+        border-radius: 20px;
+        padding: 4px 16px;
+        font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        font-size: 1.2em;
+        margin: auto;
+        margin-bottom: 2em; }
+    .testimonials__content > div:nth-last-of-type(2), .testimonials__content > div:nth-last-of-type(2) ~ div, .testimonials__content > div:nth-last-of-type(3), .testimonials__content > div:nth-last-of-type(3) ~ div {
+      background-color: #fff;
+      border-radius: 1em;
+      padding: 0;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #A69E3F;
+      margin-top: 2em;
+      margin-bottom: 2em; }
+      .testimonials__content > div:nth-last-of-type(2) .quote_mark, .testimonials__content > div:nth-last-of-type(2) ~ div .quote_mark, .testimonials__content > div:nth-last-of-type(3) .quote_mark, .testimonials__content > div:nth-last-of-type(3) ~ div .quote_mark {
+        display: inline;
+        width: 25px;
+        position: absolute;
+        margin-top: 1.5em;
+        margin-left: 1.5em; }
+      .testimonials__content > div:nth-last-of-type(2) h3, .testimonials__content > div:nth-last-of-type(2) ~ div h3, .testimonials__content > div:nth-last-of-type(3) h3, .testimonials__content > div:nth-last-of-type(3) ~ div h3 {
+        font-size: 1.1em;
+        margin: 0;
+        padding: 1.5em;
+        padding-left: 3.5em;
+        text-align: left; }
+        .testimonials__content > div:nth-last-of-type(2) h3::before, .testimonials__content > div:nth-last-of-type(2) ~ div h3::before, .testimonials__content > div:nth-last-of-type(3) h3::before, .testimonials__content > div:nth-last-of-type(3) ~ div h3::before {
+          display: none; }
+        .testimonials__content > div:nth-last-of-type(2) h3 p, .testimonials__content > div:nth-last-of-type(2) ~ div h3 p, .testimonials__content > div:nth-last-of-type(3) h3 p, .testimonials__content > div:nth-last-of-type(3) ~ div h3 p {
+          padding: 0;
+          margin: 0; }
+      .testimonials__content > div:nth-last-of-type(2) .attribution, .testimonials__content > div:nth-last-of-type(2) ~ div .attribution, .testimonials__content > div:nth-last-of-type(3) .attribution, .testimonials__content > div:nth-last-of-type(3) ~ div .attribution {
+        padding: 0.75em 1.5em;
+        border-radius: 0 0 0.75em 0.75em;
+        font-weight: 700;
+        font-size: 1em;
+        margin: 0; }
+    .testimonials__content > div:nth-last-of-type(2), .testimonials__content > div:nth-last-of-type(2) ~ div {
+      width: 48%; }
+    .testimonials__content > div:nth-last-of-type(3), .testimonials__content > div:nth-last-of-type(3) ~ div {
+      width: 32%; }
   .testimonials__sidebar {
     border-left: 2px solid #A69E3F;
     padding-left: 2em; }
@@ -2333,42 +2397,6 @@ POSTS & CONTENT STYLES
         font-size: 1em;
         margin: auto;
         margin-bottom: 2em; }
-  .testimonials.testimonial__count_1 .testimonials__content {
-    flex-direction: column;
-    padding-bottom: 2em; }
-  .testimonials.testimonial__count_1 h3, .testimonials.testimonial__count_1 h4 {
-    text-align: center;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto; }
-    .testimonials.testimonial__count_1 h3::before, .testimonials.testimonial__count_1 h4::before {
-      content: "";
-      background-image: url(../images/marker/quote.png);
-      display: block;
-      height: 58px;
-      width: 58px;
-      margin: auto; }
-  .testimonials.testimonial__count_1 .attribution {
-    display: inline-block;
-    border-radius: 20px;
-    padding: 4px 16px;
-    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 1.2em;
-    margin: auto; }
-  .testimonials__multi {
-    background-color: #fff;
-    padding: 0;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #A69E3F; }
-    .testimonials__multi h3 {
-      font-size: 1em;
-      margin: 0; }
-      .testimonials__multi h3 p {
-        padding: 0;
-        margin: 0; }
 
 article {
   justify-content: center; }

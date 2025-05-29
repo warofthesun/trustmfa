@@ -698,6 +698,101 @@ POSTS & CONTENT STYLES
 		}
 	}
 
+	&__content {
+		justify-content: space-between;
+
+		.testimonial {
+			.quote_mark {
+				display: none;
+			}
+			display: flex;
+			flex-direction: column;
+			margin-left: auto;
+			margin-right: auto;
+
+				h3 {
+					text-align: center;
+					max-width: 1000px;
+					margin-left: auto;
+					margin-right: auto;
+
+					&::before {
+						content: "";
+						background-image: url(../images/marker/quote.png);
+						display: block;
+						height: 58px;
+						width: 58px;
+						margin: auto;
+					}
+				}
+
+				.attribution {
+					display: inline-block;
+					border-radius: 20px;
+					padding: 4px 16px;
+					font-family: $sans-serif;
+					font-weight: 700;
+					font-size: 1.2em;
+					margin: auto;
+					margin-bottom: $spacing-xxl;
+				}
+			}
+
+			& > div:nth-last-of-type(2), & > div:nth-last-of-type(2) ~ div, & > div:nth-last-of-type(3), & > div:nth-last-of-type(3) ~ div {
+				.quote_mark {
+					display: inline;
+					width: 25px;
+					position: absolute;
+					margin-top: 1.5em;
+					margin-left: 1.5em;
+				}
+				background-color: $white;
+				border-radius: $radius-lg;
+				padding: 0;
+				justify-content: space-between;
+				display: flex;
+				flex-direction: column;
+				border: 1px solid $secondary-500;
+				margin-top: $spacing-xxl;
+				margin-bottom: $spacing-xxl;
+
+				h3 {
+					font-size: 1.1em;
+					margin: 0;
+					padding: $spacing-xl;
+					padding-left: 3.5em;
+					text-align: left;
+
+					&::before {
+						display: none;
+					}
+
+
+					p {
+						padding: 0;
+						margin: 0;
+					}
+				}
+
+				.attribution {
+					padding: $spacing-md $spacing-xl;
+					border-radius: 0 0 $radius-md $radius-md;
+					font-weight: 700;
+					font-size: 1em;
+					margin: 0;
+
+				}
+			}
+
+			& > div:nth-last-of-type(2), & > div:nth-last-of-type(2) ~ div {
+				width: 48%;
+			}
+
+			& > div:nth-last-of-type(3), & > div:nth-last-of-type(3) ~ div {
+				width: 32%;
+			}
+		}
+
 	&__sidebar {
 		border-left: 2px solid $secondary-500;
 		padding-left: 2em;
@@ -731,72 +826,6 @@ POSTS & CONTENT STYLES
 				font-size: 1em;
 				margin: auto;
 				margin-bottom: $spacing-xxl;
-			}
-			//&::before {
-				//	content: "";
-				//	background-image: url(../images/marker/quote.png);
-				//	display: block;
-				//	height: 58px;
-				//	width: 58px;
-				//	margin: auto;
-				//}
-		}
-	}
-
-	&.testimonial {
-		&__count {
-			&_1 {
-				.testimonials__content {
-				flex-direction: column;
-				padding-bottom: 2em;
-			}
-
-			h3, h4 {
-				text-align: center;
-				max-width: 1000px;
-				margin-left: auto;
-				margin-right: auto;
-
-				&::before {
-					content: "";
-					background-image: url(../images/marker/quote.png);
-					display: block;
-					height: 58px;
-					width: 58px;
-					margin: auto;
-				}
-			}
-
-			.attribution {
-				display: inline-block;
-				border-radius: 20px;
-				padding: 4px 16px;
-				font-family: $sans-serif;
-				font-weight: 700;
-				font-size: 1.2em;
-				margin: auto;
-			}
-			}
-		}
-	}
-
-	&__multi {
-		background-color: $white;
-		@extend %border-radius-sm;
-		padding: 0;
-		justify-content: space-between;
-		display: flex;
-		flex-direction: column;
-		border: 1px solid $secondary-500;
-
-		h3 {
-			font-size: 1em;
-			margin: 0;
-
-
-			p {
-				padding: 0;
-				margin: 0;
 			}
 		}
 	}
