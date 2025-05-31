@@ -17,9 +17,9 @@ img {
 }
 
 #inner-header {
-	flex-direction: row;
-	height: 80px;
+	flex-direction: column;
 	align-items: center;
+	padding: .5em 2em;
 }
 
 #inner-footer {
@@ -164,7 +164,7 @@ h1, .h1 {
 
 h2, .h2 {
 	font-size: 2.48em;
-	line-height: 1.4em;
+	line-height: 1em;
 	margin-top: 0;
 	margin-bottom: 0.375em;
 	font-family: $serif;
@@ -267,11 +267,27 @@ and more scalable.
 	width: 100%;
 	display: flex;
 	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.nav__wrapper {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	flex-direction: column;
 }
 
 #menu-login-and-forms {
 	margin-left: auto;
 	align-items: center;
+
+	&.show {
+		width: 100%;
+
+		&.nav li, &.nav li a {
+			width: 100%;
+		}
+	}
 
 	&.nav li a {
 		@extend %btn;
@@ -280,18 +296,22 @@ and more scalable.
 	}
 }
 #mobile-nav {
-	text-align: center;
+	text-align: right;
 	margin-bottom: 1em;
 	margin-top:-2em;
+	margin-left: auto;
+	color: $primary-50;
+	font-weight: 700;
 	transition: all .5s;
 
 	&.show {
-		margin-top: 0em;
+		margin-top: 1em;
 		padding: .5em;
-		background-color: white;
+		display: flex;
 
 		.fa-chevron-down {
 			transform: rotate(180deg);
+			padding-right: .5em;
 		}
 	}
 }
@@ -312,6 +332,7 @@ and more scalable.
 		opacity: 1;
 		display: flex;
 		height: 100%;
+		width: 100%;
 	}
 
 	li {
@@ -383,8 +404,6 @@ POSTS & CONTENT STYLES
 .hero {
 
 	&__container {
-		@include gradient(0deg, $primary-700, $primary-500);
-		margin-top: -10px;
 
 		h1 {
 			position: relative;
@@ -392,9 +411,12 @@ POSTS & CONTENT STYLES
 
 		&_landing, &_large {
 			.content_curve__up {
+				display: inline;
+				position: relative;
+				z-index: 99;
 				svg {
 					margin-top: -90px;
-					margin-bottom: -20px;
+					margin-bottom: 10px;
 				}
 			}
 		}
@@ -402,16 +424,19 @@ POSTS & CONTENT STYLES
 		&_medium {
 			.content_curve__outer {
 				svg {
-					margin-top: -80px;
-					margin-bottom: -30px;
+					margin-top: -30px;
+					margin-bottom: 0px;
+					position: relative;
+					z-index: 99;
 				}
 			}
 		}
 
 		&_landing {
 			h1 {
-			margin-top: 0;
-			margin-bottom: 0;
+				font-size: 3.5em;
+				margin-top: 0;
+				margin-bottom: 0;
 
 			span {
 				display: block;
@@ -445,15 +470,15 @@ POSTS & CONTENT STYLES
 			}
 
 			.hero__content {
-				height: 750px;
+				height: 500px;
 
 				&_text {
-					@include gradient(0deg, $primary-700, $primary-500);
+					@include gradient(0deg, rgba($primary-700, 0.8), $primary-500);
 					position: initial;
 				}
 
 				&_text-angle {
-					margin-left: -50px;
+					display: none;;
 				}
 			}
 
@@ -461,28 +486,28 @@ POSTS & CONTENT STYLES
 
 		&_large {
 			.hero__content {
-				height: 753px;
+				height: 300px;
 
 				&_text {
 					justify-content: flex-end;
+					width: 100%;
+					@include gradient(0deg, rgba($primary-700, 1), rgba($primary-500, 0.8)); 
 				}
 
 				&_text-angle {
-					svg {
-						width: 753px;
-						margin-left: 0;
-						height: 104%;
-					}
+					display: none;
 				}
 			}
 		}
 
 		&_medium {
 			.hero__content {
-				height: 400px;
+				height: 200px;
 
 				&_text {
 					justify-content: flex-end;
+					width: 100%;
+					@include gradient(0deg, rgba($primary-700, 1), rgba($primary-500, 0.8));
 				}
 			}
 		}
@@ -537,13 +562,11 @@ POSTS & CONTENT STYLES
 	}
 
 	&__content {
-
+			display: flex;
 			&_image {
 				background-size: cover;
 				background-position: right top;
 				padding: 0;
-				border-right: 2px solid $secondary-500;
-				box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23);
 			}
 
 			&_text {
@@ -556,6 +579,7 @@ POSTS & CONTENT STYLES
 
 				&-angle {
 					padding-left: 0;
+					display: none;
 
 					svg {
 						margin-left: -10px;
@@ -700,30 +724,25 @@ POSTS & CONTENT STYLES
 
 	&__content {
 		justify-content: space-between;
+		padding-bottom: $spacing-xxl;
 
 		.testimonial {
-			.quote_mark {
-				display: none;
-			}
 			display: flex;
 			flex-direction: column;
 			margin-left: auto;
 			margin-right: auto;
+			.quote_mark {
+				display: none;
+			}
+			
 
 				h3 {
 					text-align: center;
 					max-width: 1000px;
 					margin-left: auto;
 					margin-right: auto;
-
-					&::before {
-						content: "";
-						background-image: url(../images/marker/quote.png);
-						display: block;
-						height: 58px;
-						width: 58px;
-						margin: auto;
-					}
+					font-size: 1.5em;
+					
 				}
 
 				.attribution {
@@ -732,20 +751,14 @@ POSTS & CONTENT STYLES
 					padding: 4px 16px;
 					font-family: $sans-serif;
 					font-weight: 700;
-					font-size: 1.2em;
+					font-size: 1.1em;
 					margin: auto;
 					margin-bottom: $spacing-xxl;
 				}
 			}
 
 			& > div:nth-last-of-type(2), & > div:nth-last-of-type(2) ~ div, & > div:nth-last-of-type(3), & > div:nth-last-of-type(3) ~ div {
-				.quote_mark {
-					display: inline;
-					width: 25px;
-					position: absolute;
-					margin-top: 1.5em;
-					margin-left: 1.5em;
-				}
+				width: 90%;
 				background-color: $white;
 				border-radius: $radius-lg;
 				padding: 0;
@@ -754,7 +767,15 @@ POSTS & CONTENT STYLES
 				flex-direction: column;
 				border: 1px solid $secondary-500;
 				margin-top: $spacing-xxl;
-				margin-bottom: $spacing-xxl;
+
+				.quote_mark {
+					display: inline;
+					width: 25px;
+					position: absolute;
+					margin-top: 1.5em;
+					margin-left: 1.5em;
+				}
+				
 
 				h3 {
 					font-size: 1.1em;
@@ -783,27 +804,20 @@ POSTS & CONTENT STYLES
 
 				}
 			}
-
-			& > div:nth-last-of-type(2), & > div:nth-last-of-type(2) ~ div {
-				width: 48%;
-			}
-
-			& > div:nth-last-of-type(3), & > div:nth-last-of-type(3) ~ div {
-				width: 32%;
-			}
 		}
 
 	&__sidebar {
-		border-left: 2px solid $secondary-500;
-		padding-left: 2em;
+		border-top: 2px solid $secondary-500;
+		padding-top: 2em;
 
 		li {
 			display: flex;
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
 
 			.quote_mark {
-				width: 50px;
-				height: 50px;
-				margin-right: $spacing-lg;
+				display: none;
 			}
 
 			h3 {
@@ -1263,10 +1277,15 @@ article {
 			text-decoration: none;
 			display: block;
 			.h4 {
+				line-height: 1;
 				display: inline-block;
 				margin-bottom: $spacing-xs;
 				margin-left: $spacing-xs;
 			}
+		}
+
+		h2 {
+			margin-top: 1em;
 		}
 
 		.resource__description {
@@ -1686,6 +1705,7 @@ FOOTER STYLES
 			font-family: $serif;
 			color: $secondary-500;
 			font-size: 2.5em;
+			line-height: 1;
 		}
 	}
 

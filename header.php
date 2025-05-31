@@ -51,13 +51,14 @@
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div id="inner-header" class="wrap row">
+				<div id="inner-header" class="row">
 					<nav role="navigation" class="header_nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<a href="<?php echo home_url(); ?>" rel="nofollow">
 						<div id="logo" class="h1" itemscope itemtype="http://schema.org/Organization" aria-label="<?php bloginfo('name'); ?>">
 							<?php echo file_get_contents( get_template_directory() . '/library/images/mfa_logo_dark.svg' ); ?>
 						</div>
 					</a>
+					<div class="nav__wrapper">
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu ',                 // class of container (should you choose to use it)
@@ -85,7 +86,7 @@
         			               'depth' => 0,                                   // limit the depth of the nav
     					         'fallback_cb' => ''                             // fallback function (if there is one)
 						)); ?>
-
+					</div>
 					</nav>
 					<div id="mobile-nav">
 						Menu <i class="fas fa-chevron-down"></i>

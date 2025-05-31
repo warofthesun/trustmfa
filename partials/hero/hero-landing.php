@@ -1,7 +1,7 @@
 <!--HERO-LANDING-->
 <div class="hero__container hero__container_landing">
-	<div class="hero__container_inner row">
-		<div class="hero__content hero__content_image col-xs-12 row"  style="background-image: url('<?php if( get_field('hero_image') ) : the_field('hero_image');  endif; ?>')">
+	<div class="hero__container_inner">
+		<div class="hero__content hero__content_image col-xs-12"  style="background-image: url('<?php if( get_field('hero_image') ) : the_field('hero_image');  endif; ?>')">
 		<div class="hero__content hero__content_text col-xs-12 col-md-6">
 			<div><?php if( get_field('hero_headline') ) : the_field('hero_headline');  endif; ?></div>
 			<p><?php if( get_field('hero_paragraph') ) : the_field('hero_paragraph');  endif; ?></p>

@@ -59,7 +59,15 @@
             "type": "button_group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_682b78683eb1e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -97,5 +105,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1748552743
+    "modified": 1748653598
 }

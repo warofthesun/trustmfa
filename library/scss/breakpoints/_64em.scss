@@ -24,6 +24,15 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+#inner-header {
+	flex-direction: row;
+	align-items: center;
+}
+
+.header_nav {
+	flex-direction: row;
+}
+
 .nav {
 	border: 0;
 
