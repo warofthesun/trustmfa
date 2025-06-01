@@ -2022,7 +2022,8 @@ HEADER STYLES
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
-  margin-right: 24px; }
+  margin-right: auto;
+  margin-left: auto; }
   #logo .st0, #trustmfa_logo .st0 {
     fill: url(#logo-gradient2); }
   #logo .st1, #trustmfa_logo .st1 {
@@ -2050,6 +2051,8 @@ and more scalable.
   display: flex;
   justify-content: flex-start;
   flex-direction: column; }
+  .header_nav > a {
+    text-align: center; }
 
 .nav__wrapper {
   display: flex;
@@ -2058,12 +2061,16 @@ and more scalable.
   flex-direction: column; }
 
 #menu-login-and-forms {
+  margin-top: 0.75em;
   margin-left: auto;
+  margin-bottom: auto;
   align-items: center; }
   #menu-login-and-forms.show {
     width: 100%; }
     #menu-login-and-forms.show.nav li, #menu-login-and-forms.show.nav li a {
       width: 100%; }
+  #menu-login-and-forms.nav li {
+    border: 0; }
 
 #mobile-nav {
   text-align: right;
@@ -2118,6 +2125,10 @@ and more scalable.
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }
+  .nav li.current-menu-item a,
+  .nav li.current_page_item a,
+  .nav li.current_page_ancestor a {
+    color: #D3CA83; }
 
 /* end .nav */
 /*********************
@@ -2942,179 +2953,9 @@ LARGER MOBILE DEVICES
   /*********************
   NAVIGATION STYLES
   *********************/
-  #mobile-nav {
-    display: none; }
-
-  .nav {
-    flex-direction: row;
-    height: auto;
-    opacity: 1;
-    display: flex;
-    flex-wrap: wrap; }
-    .nav li {
-      border-bottom: 0; }
-
-  .header_nav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column; }
-    .header_nav a {
-      text-align: left;
-      margin-left: 1em; }
-
-  .nav__wrapper {
-    flex-direction: row; }
-
-  #inner-header {
-    width: 90%;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto; }
-
-  /* .menu is clearfixed inside mixins.scss */
-  .menu {
-    /* end .menu ul */ }
-    .menu ul {
-      /* end .menu ul li */
-      /* highlight current page */
-      /* end current highlighters */ }
-      .menu ul li {
-        text-align: left;
-        /*
-        plan your menus and drop-downs wisely.
-        */ }
-        .menu ul li a {
-          /*
-          you can use hover styles here even though this size
-          has the possibility of being a mobile device.
-          */ }
-
-  /* end .menu */
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  .hero__container {
-    background: -webkit-linear-gradient(0deg, #293F56, #456990);
-    background: -moz-linear-gradient(0deg, #293F56, #456990);
-    background: -o-linear-gradient(0deg, #293F56, #456990);
-    background: linear-gradient(0deg, #293F56, #456990);
-    margin-top: -10px; }
-    .hero__container h1 {
-      position: relative; }
-    .hero__container_landing .content_curve__up, .hero__container_large .content_curve__up {
-      display: inline; }
-      .hero__container_landing .content_curve__up svg, .hero__container_large .content_curve__up svg {
-        margin-top: -90px;
-        margin-bottom: -20px; }
-    .hero__container_medium .content_curve__outer svg {
-      margin-top: -80px;
-      margin-bottom: -30px; }
-    .hero__container_landing h1 {
-      margin-top: 0;
-      margin-bottom: 0; }
-      .hero__container_landing h1 span {
-        display: block;
-        color: #C7D2DE;
-        font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-transform: uppercase;
-        font-size: .4em;
-        line-height: 1.1; }
-    .hero__container_landing h3 {
-      margin-top: 0; }
-      .hero__container_landing h3 ul {
-        font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        margin: 0; }
-        .hero__container_landing h3 ul li {
-          display: inline-block;
-          color: #A69E3F;
-          font-weight: 800; }
-          .hero__container_landing h3 ul li:nth-child(1):after, .hero__container_landing h3 ul li:nth-child(2):after {
-            content: " • ";
-            color: #8FA5BC; }
-    .hero__container_landing .hero__content {
-      height: 750px; }
-      .hero__container_landing .hero__content_text {
-        background: -webkit-linear-gradient(0deg, #293F56, #456990);
-        background: -moz-linear-gradient(0deg, #293F56, #456990);
-        background: -o-linear-gradient(0deg, #293F56, #456990);
-        background: linear-gradient(0deg, #293F56, #456990);
-        position: initial; }
-      .hero__container_landing .hero__content_text-angle {
-        display: inline;
-        margin-left: -50px; }
-    .hero__container_large .hero__content {
-      height: 753px; }
-      .hero__container_large .hero__content_text {
-        justify-content: flex-end;
-        background: transparent; }
-      .hero__container_large .hero__content_text-angle {
-        display: inline; }
-        .hero__container_large .hero__content_text-angle svg {
-          width: 753px;
-          margin-left: 0;
-          height: 104%; }
-    .hero__container_medium .hero__content {
-      height: 400px; }
-      .hero__container_medium .hero__content_text {
-        justify-content: flex-end;
-        background: transparent; }
-    .hero__container_small {
-      background: url("../images/pattern_circle.png") repeat left top, linear-gradient(#D3CA83, #A69E3F);
-      height: 250px; }
-      .hero__container_small .hero__content {
-        background-color: white; }
-      .hero__container_small .hero__content_text {
-        background: none;
-        padding: 0;
-        width: 100%;
-        left: 0; }
-        .hero__container_small .hero__content_text h1 {
-          color: #F9F7EC;
-          text-align: center;
-          text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.23); }
-      .hero__container_small .header_curve_lower {
-        height: 240px;
-        position: relative; }
-        .hero__container_small .header_curve_lower svg {
-          position: absolute;
-          bottom: 0; }
-      .hero__container_small .content_curve__outer svg {
-        position: absolute;
-        width: 100%;
-        top: 220px; }
-    .hero__container_inner {
-      max-width: 1440px;
-      margin: auto; }
-    .hero__container p {
-      color: #F5FAFF; }
-  .hero__content_image {
-    background-size: cover;
-    background-position: right top;
-    padding: 0;
-    border-right: 2px solid #A69E3F;
-    box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
-  .hero__content_text {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 7%;
-    padding-right: 5%; }
-    .hero__content_text-angle {
-      padding-left: 0;
-      display: inline; }
-      .hero__content_text-angle svg {
-        margin-left: -10px;
-        width: 928px;
-        height: 109%; }
-  .hero__post_text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-    .hero__post_text h1 {
-      font-size: 3.5em; }
-
   .testimonials {
     margin-bottom: 2em; }
     .testimonials__background_white {
@@ -3295,70 +3136,168 @@ TABLET & SMALLER LAPTOPS
   /*********************
   NAVIGATION STYLES
   *********************/
-  #inner-header {
-    flex-direction: row;
-    align-items: center; }
-
-  .header_nav {
-    flex-direction: row; }
+  #mobile-nav {
+    display: none; }
 
   .nav {
-    border: 0;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .nav ul {
-      background: #000;
-      margin-top: 0; }
+    flex-direction: row;
+    height: auto;
+    opacity: 1;
+    display: flex;
+    flex-wrap: wrap; }
     .nav li {
-      /*
-      plan your menus and drop-downs wisely.
-      */
-      /* showing sub-menus */ }
-      .nav li a {
-        border-bottom: 0;
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
-        .nav li a:hover, .nav li a:focus {
-          color: #fff;
-          text-decoration: underline; }
-      .nav li ul.sub-menu,
-      .nav li ul.children {
-        margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
-        position: absolute;
-        visibility: hidden;
-        z-index: 8999;
-        /* highlight sub-menu current page */ }
-        .nav li ul.sub-menu li,
-        .nav li ul.children li {
-          /*
-          if you need to go deeper, go nuts
-          just remember deeper menus suck
-          for usability. k, bai.
-          */ }
-          .nav li ul.sub-menu li a,
-          .nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
-          .nav li ul.sub-menu li ul,
-          .nav li ul.children li ul {
-            top: 0;
-            left: 100%; }
-      .nav li:hover > ul {
-        top: auto;
-        visibility: visible; }
+      border-bottom: 0; }
 
-  /* end .nav */
+  .header_nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row; }
+    .header_nav a {
+      text-align: left;
+      margin-left: 1em; }
+
+  .nav__wrapper {
+    flex-direction: row; }
+
+  #inner-header {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto; }
+
+  /* .menu is clearfixed inside mixins.scss */
+  .menu {
+    /* end .menu ul */ }
+    .menu ul {
+      /* end .menu ul li */
+      /* highlight current page */
+      /* end current highlighters */ }
+      .menu ul li {
+        text-align: left;
+        /*
+        plan your menus and drop-downs wisely.
+        */ }
+        .menu ul li a {
+          /*
+          you can use hover styles here even though this size
+          has the possibility of being a mobile device.
+          */ }
+
+  /* end .menu */
+  /*********************
+  HERO STYLES
+  *********************/
+  .hero__container {
+    background: -webkit-linear-gradient(0deg, #293F56, #456990);
+    background: -moz-linear-gradient(0deg, #293F56, #456990);
+    background: -o-linear-gradient(0deg, #293F56, #456990);
+    background: linear-gradient(0deg, #293F56, #456990);
+    margin-top: -10px; }
+    .hero__container h1 {
+      position: relative; }
+    .hero__container_landing .content_curve__up, .hero__container_large .content_curve__up {
+      display: inline; }
+      .hero__container_landing .content_curve__up svg, .hero__container_large .content_curve__up svg {
+        margin-top: -90px;
+        margin-bottom: -20px; }
+    .hero__container_medium .content_curve__outer svg {
+      margin-top: -80px;
+      margin-bottom: -30px; }
+    .hero__container_landing h1 {
+      margin-top: 0;
+      margin-bottom: 0; }
+      .hero__container_landing h1 span {
+        display: block;
+        color: #C7D2DE;
+        font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: .4em;
+        line-height: 1.1; }
+    .hero__container_landing h3 {
+      margin-top: 0; }
+      .hero__container_landing h3 ul {
+        font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0; }
+        .hero__container_landing h3 ul li {
+          display: inline-block;
+          color: #A69E3F;
+          font-weight: 800; }
+          .hero__container_landing h3 ul li:nth-child(1):after, .hero__container_landing h3 ul li:nth-child(2):after {
+            content: " • ";
+            color: #8FA5BC; }
+    .hero__container_landing .hero__content {
+      height: 750px; }
+      .hero__container_landing .hero__content_text {
+        background: -webkit-linear-gradient(0deg, #293F56, #456990);
+        background: -moz-linear-gradient(0deg, #293F56, #456990);
+        background: -o-linear-gradient(0deg, #293F56, #456990);
+        background: linear-gradient(0deg, #293F56, #456990);
+        position: initial; }
+      .hero__container_landing .hero__content_text-angle {
+        display: inline;
+        margin-left: -50px; }
+    .hero__container_medium .hero__content {
+      height: 400px; }
+      .hero__container_medium .hero__content_text {
+        justify-content: flex-end;
+        background: transparent; }
+    .hero__container_small {
+      background: url("../images/pattern_circle.png") repeat left top, linear-gradient(#D3CA83, #A69E3F);
+      height: 250px; }
+      .hero__container_small .hero__content {
+        background-color: white; }
+      .hero__container_small .hero__content_text {
+        background: none;
+        padding: 0;
+        width: 100%;
+        left: 0; }
+        .hero__container_small .hero__content_text h1 {
+          color: #F9F7EC;
+          text-align: center;
+          text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.23); }
+      .hero__container_small .header_curve_lower {
+        height: 240px;
+        position: relative; }
+        .hero__container_small .header_curve_lower svg {
+          position: absolute;
+          bottom: 0; }
+      .hero__container_small .content_curve__outer svg {
+        position: absolute;
+        width: 100%;
+        top: 220px; }
+    .hero__container_inner {
+      max-width: 1440px;
+      margin: auto; }
+    .hero__container p {
+      color: #F5FAFF; }
+  .hero__content_image {
+    background-size: cover;
+    background-position: right top;
+    padding: 0;
+    border-right: 2px solid #A69E3F;
+    box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
+  .hero__content_text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 7%;
+    padding-right: 5%; }
+    .hero__content_text-angle {
+      padding-left: 0;
+      display: inline; }
+      .hero__content_text-angle svg {
+        margin-left: -10px;
+        width: 928px;
+        height: 109%; }
+  .hero__post_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .hero__post_text h1 {
+      font-size: 3.5em; }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -3411,7 +3350,85 @@ DESKTOP
 *********************/
 @media only screen and (min-width: 75em) {
   .wrap {
-    width: 1040px; } }
+    width: 1040px; }
+
+  /*************
+  NAVIGATION STYLES
+  **************/
+  #inner-header {
+    flex-direction: row;
+    align-items: center; }
+
+  .header_nav {
+    flex-direction: row; }
+
+  .nav {
+    border: 0;
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .nav ul {
+      background: #000;
+      margin-top: 0; }
+    .nav li {
+      /*
+      plan your menus and drop-downs wisely.
+      */
+      /* showing sub-menus */ }
+      .nav li a {
+        border-bottom: 0; }
+        .nav li a:hover, .nav li a:focus {
+          color: #fff;
+          text-decoration: underline; }
+      .nav li ul.sub-menu,
+      .nav li ul.children {
+        margin-top: 0;
+        border: 1px solid #ccc;
+        border-top: 0;
+        position: absolute;
+        visibility: hidden;
+        z-index: 8999;
+        /* highlight sub-menu current page */ }
+        .nav li ul.sub-menu li,
+        .nav li ul.children li {
+          /*
+          if you need to go deeper, go nuts
+          just remember deeper menus suck
+          for usability. k, bai.
+          */ }
+          .nav li ul.sub-menu li a,
+          .nav li ul.children li a {
+            padding-left: 10px;
+            border-right: 0;
+            display: block;
+            width: 180px;
+            border-bottom: 1px solid #ccc; }
+          .nav li ul.sub-menu li:last-child a,
+          .nav li ul.children li:last-child a {
+            border-bottom: 0; }
+          .nav li ul.sub-menu li ul,
+          .nav li ul.children li ul {
+            top: 0;
+            left: 100%; }
+      .nav li:hover > ul {
+        top: auto;
+        visibility: visible; }
+
+  /* end .nav */
+  /********************
+  HERO STYLES
+  ********************/
+  .hero__container_large .hero__content {
+    height: 650px; }
+    .hero__container_large .hero__content_text {
+      justify-content: flex-end;
+      background: transparent; }
+    .hero__container_large .hero__content_text-angle {
+      display: inline; }
+      .hero__container_large .hero__content_text-angle svg {
+        width: 650px;
+        margin-left: 0;
+        height: 104%; } }
 /*********************
 LARGE VIEWING SIZE
 *********************/

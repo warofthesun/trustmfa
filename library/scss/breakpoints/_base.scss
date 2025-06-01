@@ -221,34 +221,35 @@ HEADER STYLES
 	z-index: 99;
 }
 
-	#logo, #trustmfa_logo {
-		height: 50px;
-		width: auto;
-		background-repeat: no-repeat;
-		background-size: contain;
-		display: inline-block;
-		margin-right: 24px;
+#logo, #trustmfa_logo {
+	height: 50px;
+	width: auto;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	margin-right: auto;
+	margin-left: auto;
 
-		.st0 {
-			fill: url(#logo-gradient2);
-		  }
-	
-		  .st1 {
-			fill: url(#logo-gradient1);
-		  }
-	
-		  .st2 {
-			fill: url(#logo-gradient);
-		  }
-	
-		  .st3 {
-			fill: $primary-10;
-		  }
-
-		a {
-			color: $white;
+	.st0 {
+		fill: url(#logo-gradient2);
 		}
+
+		.st1 {
+		fill: url(#logo-gradient1);
+		}
+
+		.st2 {
+		fill: url(#logo-gradient);
+		}
+
+		.st3 {
+		fill: $primary-10;
+		}
+
+	a {
+		color: $white;
 	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -268,6 +269,10 @@ and more scalable.
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
+
+	& > a {
+		text-align: center;
+	}
 }
 
 .nav__wrapper {
@@ -278,7 +283,9 @@ and more scalable.
 }
 
 #menu-login-and-forms {
+	margin-top: $spacing-md;
 	margin-left: auto;
+	margin-bottom: auto;
 	align-items: center;
 
 	&.show {
@@ -287,6 +294,10 @@ and more scalable.
 		&.nav li, &.nav li a {
 			width: 100%;
 		}
+	}
+
+	&.nav li {
+		border: 0;
 	}
 
 	&.nav li a {
@@ -390,7 +401,9 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a {
+			color: $secondary-300;
+		}
 
 	}  /* end current highlighters */
 

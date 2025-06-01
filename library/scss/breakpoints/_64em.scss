@@ -24,113 +24,287 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-#inner-header {
-	flex-direction: row;
-	align-items: center;
-}
 
-.header_nav {
-	flex-direction: row;
+#mobile-nav {
+	display: none;
 }
 
 .nav {
-	border: 0;
+	flex-direction: row;
+	height: auto;
+	opacity: 1;
+	display: flex;
+	flex-wrap: wrap;
 
-
-	ul {
-		background:$black;
-		margin-top:0;
-	}
 	li {
+		border-bottom: 0;
+	}
+}
+
+.header_nav {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+
+	a {
+		text-align: left;
+		margin-left: 1em;
+	}
+}
+
+.nav__wrapper {
+	flex-direction: row;
+}
+
+#inner-header {
+	width: 100%;
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
-		a {
-			border-bottom: 0;
-
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
-			}
-		}
-
-		&:first-child {}
-		&:last-child {}
-
-		/*
-		plan your menus and drop-downs wisely.
-		*/
-		ul.sub-menu,
-		ul.children {
-			margin-top: 0;
-			border: 1px solid #ccc;
-			border-top: 0;
-			position: absolute;
-			visibility: hidden;
-			z-index: 8999;
-
+	/* .menu is clearfixed inside mixins.scss */
+	.menu {
+		ul {
 			li {
+				text-align: left;
 
 				a {
-					padding-left: 10px;
-					border-right: 0;
-					display: block;
-					width: 180px;
-					border-bottom: 1px solid #ccc;
 
-					&:hover,
-					&:focus {}
+					/*
+					you can use hover styles here even though this size
+					has the possibility of being a mobile device.
+					*/
+					&:hover, &:focus {
 
-					&:link {}
-				}
-
-				&:first-child {}
-
-				&:last-child {
-
-					a {
-						border-bottom: 0;
 					}
 				}
 
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-				ul {
-					top:0;
-					left:100%;
-				}
-			}
+				&:first-child {}
+				&:last-child {}
 
-			/* highlight sub-menu current page */
+				/*
+				plan your menus and drop-downs wisely.
+				*/
+				ul.sub-menu,
+				ul.children {
+					li {
+						a {
+							&:hover,
+							&:focus {}
+							&:link {}
+						}
+						&:first-child {}
+						&:last-child {}
+					}
+				}
+			} /* end .menu ul li */
+
+			/* highlight current page */
 			li.current-menu-item,
 			li.current_page_item,
 			li.current_page_ancestor {
 				a {}
+			}  /* end current highlighters */
+		} /* end .menu ul */
+	} /* end .menu */
+
+/*********************
+HERO STYLES
+*********************/
+
+.hero {
+
+	&__container {
+		@include gradient(0deg, $primary-700, $primary-500);
+		margin-top: -10px;
+
+		h1 {
+			position: relative;
+		}
+
+		&_landing, &_large {
+			.content_curve__up {
+				display: inline;
+				svg {
+					margin-top: -90px;
+					margin-bottom: -20px;
+				}
 			}
 		}
 
-		/* showing sub-menus */
-		&:hover > ul {
-			top: auto;
-			visibility:visible;
+		&_medium {
+			.content_curve__outer {
+				svg {
+					margin-top: -80px;
+					margin-bottom: -30px;
+				}
+			}
 		}
 
-	} /* end .menu ul li */
+		&_landing {
+			h1 {
+			
+			margin-top: 0;
+			margin-bottom: 0;
 
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-		a {}
-	}  /* end current highlighters */
+			span {
+				display: block;
+				color: $primary-50;
+				font-family: $sans-serif;
+				text-transform: uppercase;
+				font-size: .4em;
+				line-height: 1.1;
+			}
+				}
 
-} /* end .nav */
+			h3 {
+				margin-top: 0;
+				ul {
+				font-family: $sans-serif;
+				margin:0;
+
+				li {
+					display: inline-block;
+					color: $secondary-500;
+					font-weight: 800;
+
+					&:nth-child(1), &:nth-child(2) {
+						&:after {
+							content: " • ";
+							color: $primary-200;
+						}
+					}
+				}
+				}
+			}
+
+			.hero__content {
+				height: 750px;
+
+				&_text {
+					@include gradient(0deg, $primary-700, $primary-500);
+					position: initial;
+				}
+
+				&_text-angle {
+					display: inline;
+					margin-left: -50px;
+				}
+			}
+
+		}
+
+		
+
+		&_medium {
+			.hero__content {
+				height: 400px;
+
+				&_text {
+					justify-content: flex-end;
+					background: transparent;
+				}
+			}
+		}
+
+		&_small {
+			@include gold_overlay_gradient();
+			height: 250px;
+
+			.hero__content {
+				background-color: white;
+			}
+
+			.hero__content_text {
+				background: none;
+				padding: 0;
+				width: 100%;
+				left: 0;
+
+				h1 {
+					color: $secondary-50;
+					text-align: center;
+					text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.23);
+				}
+			}
+
+			.header_curve_lower {
+				height: 240px;
+				position: relative;
+
+				svg {
+					position:absolute;
+					bottom: 0;
+				}
+			}
+
+			.content_curve__outer svg {
+				position: absolute;
+				width: 100%;
+				top: 220px;
+			}
+			
+		}
+
+		&_inner {
+			max-width: 1440px;
+			margin: auto;
+		}
+
+		p {
+			color: $primary-10;
+		}
+	}
+
+	&__content {
+
+			&_image {
+				background-size: cover;
+				background-position: right top;
+				padding: 0;
+				border-right: 2px solid $secondary-500;
+				box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23);
+			}
+
+			&_text {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding-left: 7%;
+				padding-right: 5%;
+
+				&-angle {
+					padding-left: 0;
+					display: inline;
+
+					svg {
+						margin-left: -10px;
+						width: 928px;
+						height: 109%;
+					}
+				}
+			}
+
+			
+	}
+
+	&__post {
+		&_text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			h1 {
+			font-size: 3.5em;
+			}
+		}
+		
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES
