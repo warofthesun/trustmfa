@@ -2911,6 +2911,8 @@ FOOTER STYLES
   .footer__logo {
     display: flex;
     align-items: flex-end; }
+    .footer__logo #trustmfa_logo {
+      margin-left: 0; }
   .footer__curve {
     background: url("../images/footer_gold.svg") no-repeat, linear-gradient(#F5F6F7);
     height: 170px;

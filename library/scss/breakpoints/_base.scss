@@ -1688,6 +1688,10 @@ FOOTER STYLES
 	&__logo {
 		display: flex;
 		align-items: flex-end;
+
+		#trustmfa_logo {
+			margin-left: 0;
+		}
 	}
 
 	&__curve {
