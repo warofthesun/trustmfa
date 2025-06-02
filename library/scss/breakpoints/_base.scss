@@ -529,6 +529,11 @@ POSTS & CONTENT STYLES
 			@include gold_overlay_gradient();
 			height: 250px;
 
+			.hero__container_inner {
+				height: 100%;
+				align-items: center;
+			}
+
 			.hero__content {
 				background-color: white;
 			}
@@ -547,19 +552,11 @@ POSTS & CONTENT STYLES
 			}
 
 			.header_curve_lower {
-				height: 240px;
-				position: relative;
-
-				svg {
-					position:absolute;
-					bottom: 0;
-				}
+				display: none;
 			}
 
 			.content_curve__outer svg {
-				position: absolute;
-				width: 100%;
-				top: 220px;
+				display: none;
 			}
 			
 		}

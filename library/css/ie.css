@@ -464,15 +464,16 @@ HERO STYLES
         text-align: center;
         text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.23); }
     .hero__container_small .header_curve_lower {
+      display: inline;
       height: 240px;
       position: relative; }
       .hero__container_small .header_curve_lower svg {
         position: absolute;
         bottom: 0; }
     .hero__container_small .content_curve__outer svg {
-      position: absolute;
-      width: 100%;
-      top: 220px; }
+      display: inline;
+      position: relative;
+      margin-top: -5%; }
   .hero__container_inner {
     max-width: 1440px;
     margin: auto; }

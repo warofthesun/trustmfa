@@ -236,6 +236,7 @@ HERO STYLES
 			}
 
 			.header_curve_lower {
+				display: inline;
 				height: 240px;
 				position: relative;
 
@@ -246,9 +247,9 @@ HERO STYLES
 			}
 
 			.content_curve__outer svg {
-				position: absolute;
-				width: 100%;
-				top: 220px;
+				display: inline;
+				position: relative;
+				margin-top: -5%;
 			}
 			
 		}
