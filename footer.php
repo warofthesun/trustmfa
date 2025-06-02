@@ -27,7 +27,7 @@
 	</div>
 	<div class="col-xs-12 col-md-6 contact_info">
 		<?php if(get_field('address', 'option')): ?><div class="address__physical"><?php the_field('address', 'option'); ?></div><?php endif; ?>
-		<?php if(get_field('phone_number', 'option')): ?><div class="phone_number">phone number</div><?php endif; ?>
+		<?php if(get_field('phone_number', 'option')): ?><div class="phone_number"><?php the_field('phone_number', 'option'); ?></div><?php endif; ?>
 		<?php if(get_field('email_address', 'option')): ?><a href="mailto:<?php the_field('email_address', 'option');?>" class="address__email">email</a><?php endif; ?>
 		
 	</div>
