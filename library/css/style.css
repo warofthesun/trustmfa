@@ -2144,7 +2144,7 @@ POSTS & CONTENT STYLES
     margin-top: -90px;
     margin-bottom: 10px; }
 .hero__container_medium .content_curve__outer svg {
-  margin-top: -30px;
+  margin-top: -45px;
   margin-bottom: 0px;
   position: relative;
   z-index: 99; }
@@ -2906,37 +2906,54 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #304A65;
-  color: #f8f9fa; }
+  background: -webkit-linear-gradient(180deg, #456990, #293F56);
+  background: -moz-linear-gradient(180deg, #456990, #293F56);
+  background: -o-linear-gradient(180deg, #456990, #293F56);
+  background: linear-gradient(180deg, #456990, #293F56); }
   .footer__logo {
     display: flex;
     align-items: flex-end; }
     .footer__logo #trustmfa_logo {
-      margin-left: 0; }
+      margin-top: 2em;
+      margin-left: auto; }
   .footer__curve {
-    background: url("../images/footer_gold.svg") no-repeat, linear-gradient(#F5F6F7);
-    height: 170px;
     background-size: cover;
     background-position: center;
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
+    .footer__curve svg {
+      margin-top: -1em; }
+  .footer-nav {
+    opacity: 1;
+    display: flex;
+    justify-content: center; }
 
-.footer__tagline p {
-  padding: 0;
-  margin: 0; }
-.footer__tagline em {
-  font-style: normal;
-  font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1.5em; }
-.footer__tagline strong {
-  font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
-  color: #A69E3F;
-  font-size: 2.5em;
-  line-height: 1; }
+.footer__tagline {
+  position: relative; }
+  .footer__tagline p {
+    padding: 0;
+    margin: 0; }
+  .footer__tagline em {
+    font-style: normal;
+    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em; }
+  .footer__tagline strong {
+    font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+    color: #A69E3F;
+    font-size: 2.5em;
+    line-height: 1; }
 
-#inner-footer {
-  background-color: #304A65; }
+.lower_content_curve {
+  width: 0; }
+
+#inner-footer .contact_info {
+  color: #A2B4C7;
+  text-align: center; }
+  #inner-footer .contact_info .address__physical {
+    line-height: 1;
+    margin-bottom: 0.5em; }
 
 /*
 if you checked out the link above:
@@ -2947,7 +2964,16 @@ it simple because you'll have to
 override these styles for the desktop
 view.
 */
+.footer-links {
+  margin-bottom: 2em; }
+
 /* end .footer-links */
+.copyright {
+  text-align: center;
+  color: #A2B4C7;
+  margin: 1em 0;
+  width: 100%; }
+
 /*********************
 LARGER MOBILE DEVICES
 *********************/
@@ -3114,6 +3140,11 @@ LARGER MOBILE DEVICES
   /*********************
   FOOTER STYLES
   *********************/
+  .lower_content_curve {
+    width: 100%; }
+    .lower_content_curve .lower_content_curve__background {
+      fill: #F5F6F7; }
+
   /*
   check your menus here. do they look good?
   do they need tweaking?
@@ -3130,7 +3161,7 @@ TABLET & SMALLER LAPTOPS
   LAYOUT & GRID STYLES
   *********************/
   .wrap {
-    width: 760px; }
+    width: 96%; }
 
   /*********************
   HEADER STYLES
@@ -3239,6 +3270,8 @@ TABLET & SMALLER LAPTOPS
       .hero__container_landing .hero__content_text-angle {
         display: inline;
         margin-left: -50px; }
+        .hero__container_landing .hero__content_text-angle svg {
+          width: 250px; }
     .hero__container_medium .hero__content {
       height: 400px; }
       .hero__container_medium .hero__content_text {
@@ -3276,9 +3309,7 @@ TABLET & SMALLER LAPTOPS
   .hero__content_image {
     background-size: cover;
     background-position: right top;
-    padding: 0;
-    border-right: 2px solid #A69E3F;
-    box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
+    padding: 0; }
   .hero__content_text {
     position: absolute;
     display: flex;
@@ -3291,7 +3322,7 @@ TABLET & SMALLER LAPTOPS
       display: inline; }
       .hero__content_text-angle svg {
         margin-left: -10px;
-        width: 928px;
+        width: 930px;
         height: 109%; }
   .hero__post_text {
     display: flex;
@@ -3339,6 +3370,17 @@ TABLET & SMALLER LAPTOPS
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
+  #inner-footer {
+    flex-direction: row; }
+    #inner-footer .contact_info {
+      text-align: right; }
+
+  .footer__logo #trustmfa_logo {
+    margin-top: 0em;
+    margin-left: 1em; }
+  .footer-nav {
+    justify-content: flex-start; }
+
   .footer-links ul li {
     /*
     be careful with the depth of your menus.
@@ -3446,7 +3488,24 @@ LARGE VIEWING SIZE
   
   ******************************************************************/
   .wrap {
-    width: 1280px; } }
+    width: 1240px; } }
+@media only screen and (min-width: 1440px) {
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/
+  #inner-header {
+    padding-right: 0; }
+
+  .hero__content_image {
+    border-right: 2px solid #A69E3F;
+    box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); } }
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

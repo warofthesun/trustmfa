@@ -437,7 +437,7 @@ POSTS & CONTENT STYLES
 		&_medium {
 			.content_curve__outer {
 				svg {
-					margin-top: -30px;
+					margin-top: -45px;
 					margin-bottom: 0px;
 					position: relative;
 					z-index: 99;
@@ -1682,29 +1682,39 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $primary-600;
-	color: $light-gray;
+	@include gradient(180deg, $primary-two_stops__dark);
 
 	&__logo {
 		display: flex;
 		align-items: flex-end;
 
 		#trustmfa_logo {
-			margin-left: 0;
+			margin-top: 2em;
+			margin-left: auto;
 		}
 	}
 
 	&__curve {
-		background: url("../images/footer_gold.svg") no-repeat, linear-gradient($primary-surface);
-		height: 170px;
 		background-size: cover;
 		background-position: center;
 		display: flex;
+		flex-direction: column;
+
+		svg {
+			margin-top: -1em;
+		}
+	}
+
+	&-nav {
+		opacity: 1;
+		display: flex;
+		justify-content: center;
 	}
 }
 
 
 	.footer__tagline {
+		position: relative;
 		p {
 			padding: 0;
 			margin: 0;
@@ -1726,8 +1736,23 @@ FOOTER STYLES
 		}
 	}
 
+.lower_content_curve {
+	width: 0;
+}
+
 #inner-footer {
-	background-color: $primary-600;
+	.contact_info {
+		color: $primary-100;
+		text-align: center;
+
+		.address {
+			&__physical {
+				line-height: 1;
+				margin-bottom: $spacing-sm;
+			}
+		}
+	}
+	
 }
 
 	/*
@@ -1740,7 +1765,7 @@ FOOTER STYLES
 	view.
 	*/
 	.footer-links {
-
+		margin-bottom: $spacing-xxl;
 		ul {
 
 			li {}
@@ -1750,4 +1775,9 @@ FOOTER STYLES
 	} /* end .footer-links */
 
 
-	.copyright {}
+	.copyright {
+		text-align: center;
+		color: $primary-100;
+		margin: 1em 0;
+		width: 100%;
+	}

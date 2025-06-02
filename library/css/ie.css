@@ -316,6 +316,11 @@ POSTS & CONTENT STYLES
 /*********************
 FOOTER STYLES
 *********************/
+.lower_content_curve {
+  width: 100%; }
+  .lower_content_curve .lower_content_curve__background {
+    fill: #F5F6F7; }
+
 /*
 check your menus here. do they look good?
 do they need tweaking?
@@ -328,7 +333,7 @@ GENERAL STYLES
 LAYOUT & GRID STYLES
 *********************/
 .wrap {
-  width: 760px; }
+  width: 96%; }
 
 /*********************
 HEADER STYLES
@@ -437,6 +442,8 @@ HERO STYLES
     .hero__container_landing .hero__content_text-angle {
       display: inline;
       margin-left: -50px; }
+      .hero__container_landing .hero__content_text-angle svg {
+        width: 250px; }
   .hero__container_medium .hero__content {
     height: 400px; }
     .hero__container_medium .hero__content_text {
@@ -474,9 +481,7 @@ HERO STYLES
 .hero__content_image {
   background-size: cover;
   background-position: right top;
-  padding: 0;
-  border-right: 2px solid #A69E3F;
-  box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23); }
+  padding: 0; }
 .hero__content_text {
   position: absolute;
   display: flex;
@@ -489,7 +494,7 @@ HERO STYLES
     display: inline; }
     .hero__content_text-angle svg {
       margin-left: -10px;
-      width: 928px;
+      width: 930px;
       height: 109%; }
 .hero__post_text {
   display: flex;
@@ -537,6 +542,17 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+#inner-footer {
+  flex-direction: row; }
+  #inner-footer .contact_info {
+    text-align: right; }
+
+.footer__logo #trustmfa_logo {
+  margin-top: 0em;
+  margin-left: 1em; }
+.footer-nav {
+  justify-content: flex-start; }
+
 .footer-links ul li {
   /*
   be careful with the depth of your menus.

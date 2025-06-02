@@ -98,7 +98,9 @@ LARGE VIEWING SIZE
 
 } // end of media query
 
-
+@media only screen and (min-width: 1440px) {
+	@import "breakpoints/1440up";
+}
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

@@ -9,7 +9,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 760px;
+	width: 96%;
 }
 
 /*********************
@@ -192,6 +192,10 @@ HERO STYLES
 				&_text-angle {
 					display: inline;
 					margin-left: -50px;
+
+					svg {
+						width: 250px;
+					}
 				}
 			}
 
@@ -265,8 +269,6 @@ HERO STYLES
 				background-size: cover;
 				background-position: right top;
 				padding: 0;
-				border-right: 2px solid $secondary-500;
-				box-shadow: 17px -10px 15px rgba(0, 0, 0, 0.23);
 			}
 
 			&_text {
@@ -283,7 +285,7 @@ HERO STYLES
 
 					svg {
 						margin-left: -10px;
-						width: 928px;
+						width: 930px;
 						height: 109%;
 					}
 				}
@@ -438,6 +440,28 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+
+#inner-footer {
+	flex-direction: row;
+
+	.contact_info {
+		text-align: right;
+	}
+}
+
+.footer {
+	&__logo {
+
+		#trustmfa_logo {
+			margin-top: 0em;
+			margin-left: 1em;
+		}
+	}
+
+	&-nav {
+		justify-content: flex-start;
+	}
+}
 .footer-links {
 	ul {
 		li {

@@ -218,6 +218,13 @@ POSTS & CONTENT STYLES
 FOOTER STYLES
 *********************/
 
+.lower_content_curve {
+	width: 100%;
+
+	.lower_content_curve__background {
+		fill: $primary-surface;
+	}
+}
 /*
 check your menus here. do they look good?
 do they need tweaking?
