@@ -59,6 +59,18 @@ Buttons and such
 	}
 }
 
+input[type="text"],
+input[type="email"],
+textarea {
+	border: 1px solid $secondary-500;
+}
+
+input[type="submit"] {
+	@extend %btn;
+		@extend %btn_secondary;
+		@extend %btn_secondary__solid;
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
