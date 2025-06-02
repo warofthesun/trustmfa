@@ -168,6 +168,11 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "testimonials"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "form"
             }
         ]
     ],
@@ -181,5 +186,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1748552984
+    "modified": 1748896505
 }

@@ -1477,7 +1477,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.button_pair .button:nth-child(1), .button_pair .button:nth-child(2), input[type="submit"], #menu-login-and-forms.nav li a, .gallery_item .button {
+.button_pair .button:nth-child(1), .button_pair .button:nth-child(2), input[type="submit"], #wp-submit, #menu-login-and-forms.nav li a, .gallery_item .button {
   display: inline-block;
   position: relative;
   font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1491,15 +1491,15 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .button_pair .button:nth-child(1) .svg-inline--fa, .button_pair .button:nth-child(2) .svg-inline--fa, input[type="submit"] .svg-inline--fa, #menu-login-and-forms.nav li a .svg-inline--fa, .gallery_item .button .svg-inline--fa {
+  .button_pair .button:nth-child(1) .svg-inline--fa, .button_pair .button:nth-child(2) .svg-inline--fa, input[type="submit"] .svg-inline--fa, #wp-submit .svg-inline--fa, #menu-login-and-forms.nav li a .svg-inline--fa, .gallery_item .button .svg-inline--fa {
     font-size: .9em; }
-  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), input[type="submit"]:hover, #menu-login-and-forms.nav li a:hover, .gallery_item .button:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), input[type="submit"]:focus, #menu-login-and-forms.nav li a:focus, .gallery_item .button:focus {
+  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), input[type="submit"]:hover, #wp-submit:hover, #menu-login-and-forms.nav li a:hover, .gallery_item .button:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), input[type="submit"]:focus, #wp-submit:focus, #menu-login-and-forms.nav li a:focus, .gallery_item .button:focus {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .button_pair .button:active:nth-child(1), .button_pair .button:active:nth-child(2), input[type="submit"]:active, #menu-login-and-forms.nav li a:active, .gallery_item .button:active {
+  .button_pair .button:active:nth-child(1), .button_pair .button:active:nth-child(2), input[type="submit"]:active, #wp-submit:active, #menu-login-and-forms.nav li a:active, .gallery_item .button:active {
     top: 1px; }
-  .button_pair .button:nth-child(1), input[type="submit"], #menu-login-and-forms.nav li a {
+  .button_pair .button:nth-child(1), input[type="submit"], #wp-submit, #menu-login-and-forms.nav li a {
     color: #25250e;
     border: 1px solid #A69E3F;
     background: -webkit-linear-gradient(45deg, #BFB55C, #A69E3F);
@@ -1517,7 +1517,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
       color: #827D2E;
       text-decoration: none;
       outline: none; }
-  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), input[type="submit"]:hover, #menu-login-and-forms.nav li a:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), input[type="submit"]:focus, #menu-login-and-forms.nav li a:focus {
+  .button_pair .button:hover:nth-child(1), .button_pair .button:hover:nth-child(2), input[type="submit"]:hover, #wp-submit:hover, #menu-login-and-forms.nav li a:hover, .button_pair .button:focus:nth-child(1), .button_pair .button:focus:nth-child(2), input[type="submit"]:focus, #wp-submit:focus, #menu-login-and-forms.nav li a:focus {
     color: #BFB55C;
     background: -webkit-linear-gradient(90deg, #827D2E, #646127);
     background: -moz-linear-gradient(90deg, #827D2E, #646127);
@@ -2700,7 +2700,30 @@ article {
     margin-top: 1em; }
   .resources .resourse__item .resource__description {
     margin-left: 2em;
-    display: inline-block; }
+    display: inline-block;
+    font-style: italic; }
+
+.forms {
+  columns: 2; }
+  .forms__sidebar {
+    columns: 1; }
+  .forms .form__item .form__link {
+    text-decoration: none;
+    display: block; }
+    .forms .form__item .form__link h4 {
+      line-height: 1;
+      display: inline-block;
+      margin-bottom: 0.25em;
+      margin-left: 0.25em; }
+  .forms .form__item h2 {
+    margin-top: 1em; }
+  .forms .form__item .form__description {
+    margin-left: 2em;
+    display: inline-block;
+    font-style: italic; }
+
+.entry-content .form__description {
+  margin-bottom: 1em; }
 
 /******************************************************************
 PAGE NAVI STYLES

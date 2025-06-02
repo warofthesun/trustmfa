@@ -350,4 +350,29 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
+/*CUSTOM SHORTCODE TO PULL FORM POSTS */
+
+add_shortcode( 'formposts', 'display_custom_post_type' ); 
+
+function display_custom_post_type(){
+    $args = array( 'post_type' => 'form', 'post_status' => 'publish' );
+    $string = '';
+    $query = new WP_Query( $args );
+	$description = get_field('form_description');
+    // Loop through the posts and build your output (e.g., list titles with links)
+    if ( $query->have_posts() ) {
+        $string .= '<div class="forms forms__page">';
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            $string .= '<div class="form__item"><a href="' . get_permalink() . '" class="form__link"><h4>' . get_the_title() . '</h4></a><div class="form__description">' . get_field('form_description') . '</div></div>';
+        }
+        $string .= '</div>';
+        wp_reset_postdata(); // Important: Reset the query after using it
+    } else {
+        $string = 'No posts found';
+    }
+    return $string;
+}
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

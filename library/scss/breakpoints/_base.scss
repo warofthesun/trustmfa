@@ -65,7 +65,7 @@ textarea {
 	border: 1px solid $secondary-500;
 }
 
-input[type="submit"] {
+input[type="submit"], #wp-submit {
 	@extend %btn;
 		@extend %btn_secondary;
 		@extend %btn_secondary__solid;
@@ -1313,8 +1313,49 @@ article {
 		.resource__description {
 			margin-left: $spacing-xxl;
 			display: inline-block;
+			font-style: italic;
 		}
 	}
+}
+
+//FORMS
+
+.forms {
+	columns: 2;
+
+	&__sidebar {
+		columns: 1;
+
+	}
+
+	.form__item {
+		
+		.form__link {
+			text-decoration: none;
+			display: block;
+			
+			h4 {
+				line-height: 1;
+				display: inline-block;
+				margin-bottom: $spacing-xs;
+				margin-left: $spacing-xs;
+			}
+		}
+
+		h2 {
+			margin-top: 1em;
+		}
+
+		.form__description {
+			margin-left: $spacing-xxl;
+			display: inline-block;
+			font-style: italic;
+		}
+	}
+}
+
+.entry-content .form__description {
+	margin-bottom: $spacing-lg;
 }
 
 /******************************************************************
