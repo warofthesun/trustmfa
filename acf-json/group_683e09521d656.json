@@ -44,7 +44,7 @@
             "key": "field_683e0a063137b",
             "label": "Link to downloadable PDF",
             "name": "link_to_downloadable_pdf",
-            "type": "link",
+            "type": "file",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -53,7 +53,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -83,5 +87,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1748896576
+    "modified": 1749144032
 }

@@ -38,6 +38,10 @@
 
 									<?php if(get_field('form_description')) : ?>
 										<div class="form__description"><?php the_field('form_description'); ?></div><?php endif; ?>
+										<? if(get_field('link_to_downloadable_pdf')) : ?>
+											<a href="<?php the_field('link_to_downloadable_pdf'); ?>" target="_new">Download PDF</a>
+										<?php endif; ?>
+
 									<?php $form = get_field('form_code'); echo do_shortcode($form); ?>
 
 								</section> <!-- end article section -->

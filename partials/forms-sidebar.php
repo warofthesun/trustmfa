@@ -1,7 +1,11 @@
 <!--forms-sidebar-->
-<?php $query = new WP_Query( [
+
+<?php 
+$current_post_id = get_the_ID();
+$query = new WP_Query( [
     'post_type'      => 'form',
     'nopaging'       => true,
+    'post__not_in'   => array( $current_post_id ),
 ] ); ?>
 
 <?php if ( $query->have_posts() ) : ?>
@@ -12,7 +16,7 @@
 
                     <div class="form__item">
                         <a href="<?php the_permalink(); ?>" class="form__link"><h4><?php the_title(); ?></h4></a>
-                        <?php //if(get_field('form_description')) : ?><!--div class="form__description"><?php //the_field('form_description');?></div--><?php //endif; ?>
+                        <?php if(get_field('form_description')) : ?><div class="form__description"><?php the_field('form_description');?></div--><?php endif; ?>
                         </div>
 
                 <?php endwhile; ?>
