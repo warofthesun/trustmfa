@@ -626,6 +626,11 @@ POSTS & CONTENT STYLES
 		}
 		
 	}
+
+	&__featured_post {
+		position:absolute;
+		display: none;
+	}
 }
 
 #inner-content {

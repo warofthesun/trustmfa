@@ -2258,6 +2258,9 @@ POSTS & CONTENT STYLES
   justify-content: center; }
   .hero__post_text h1 {
     font-size: 3.5em; }
+.hero__featured_post {
+  position: absolute;
+  display: none; }
 
 #inner-content {
   margin-bottom: 2em; }
@@ -3498,7 +3501,34 @@ DESKTOP
       .hero__container_large .hero__content_text-angle svg {
         width: 650px;
         margin-left: 0;
-        height: 104%; } }
+        height: 104%; }
+  .hero__featured_post {
+    display: flex;
+    right: 2em;
+    bottom: 80px;
+    width: 500px;
+    box-shadow: -13px 0px 21px -10px rgba(0, 0, 0, 0.3); }
+    .hero__featured_post article {
+      display: flex;
+      flex-direction: row;
+      border-radius: 1em;
+      align-items: center; }
+      .hero__featured_post article header {
+        border-bottom: 0;
+        padding: 0 1.5em; }
+      .hero__featured_post article .post-category {
+        color: #A69E3F;
+        font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
+        margin-bottom: 0.5em; }
+      .hero__featured_post article .entry-title {
+        font-size: 1.3em;
+        line-height: 1;
+        font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        .hero__featured_post article .entry-title a {
+          text-decoration: none;
+          color: #304A65; }
+      .hero__featured_post article .hero--image {
+        line-height: 0; } }
 /*********************
 LARGE VIEWING SIZE
 *********************/

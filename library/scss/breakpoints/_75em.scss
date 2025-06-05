@@ -143,4 +143,46 @@ HERO STYLES
 			}
 		}
 	}
+
+	&__featured_post {
+		display: flex;
+		right: $spacing-xxl;
+		bottom: 80px;
+		width: 500px;
+		@include box-shadow($left-diffused);
+
+		article {
+			display: flex;
+			flex-direction: row;
+			border-radius: $radius-lg;
+			align-items: center;
+
+			
+			header {
+				border-bottom: 0;
+				padding: 0 1.5em;
+			}
+
+			.post-category {
+				color: $secondary-500;
+				font-family: $serif;
+				margin-bottom: $spacing-sm;
+			}
+
+			.entry-title {
+				font-size: 1.3em;
+				line-height: 1;
+				font-family: $sans-serif;
+				
+				a {
+					text-decoration: none;
+					color: $primary-600;
+				}
+			}
+
+			.hero--image {
+				line-height: 0;
+			}
+		}
+	}
 }
