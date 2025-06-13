@@ -105,6 +105,8 @@ probably best not to use it. I mean, were you going to anyway? */
 
 
 /* Set 3 variables w/ different styles */
+$minimal: 0px 0px 10px -10px rgba(0, 0, 0, 0.3);
+$diffused: 0px 0px 21px -10px rgba(0, 0, 0, 0.3);
 $bottom-diffused: 0px 13px 21px -10px rgba(0, 0, 0, 0.3);
 $left-diffused: -13px 0px 21px -10px rgba(0, 0, 0, 0.3);
 $right-diffused: 13px 0px 21px -10px rgba(0, 0, 0, 0.3);
