@@ -2,7 +2,7 @@
 <div class="hero__container hero__container_landing">
 	<div class="hero__container_inner">
 		<div class="hero__content hero__content_image col-xs-12"  style="background-image: url('<?php if( get_field('hero_image') ) : the_field('hero_image');  endif; ?>')">
-		<div class="hero__content hero__content_text col-xs-12 col-md-6">
+		<div class="hero__content hero__content_text col-xs-12 col-md-7">
 			<div><?php if( get_field('hero_headline') ) : the_field('hero_headline');  endif; ?></div>
 			<p><?php if( get_field('hero_paragraph') ) : the_field('hero_paragraph');  endif; ?></p>
 			<?php
@@ -30,7 +30,7 @@
 						// Do something...
 					endif; ?>
 		</div>
-		<div class="hero__content hero__content_text-angle col-xs-12 col-md-6">
+		<div class="hero__content hero__content_text-angle col-xs-12 col-md-4">
 			<?php echo file_get_contents( get_template_directory() . '/library/images/hero_landing_gold_angle.svg' ); ?>
 		</div>
 		</div>

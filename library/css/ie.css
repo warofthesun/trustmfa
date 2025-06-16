@@ -410,6 +410,7 @@ HERO STYLES
     margin-top: -80px;
     margin-bottom: -30px; }
   .hero__container_landing h1 {
+    font-size: 4.5em;
     margin-top: 0;
     margin-bottom: 0; }
     .hero__container_landing h1 span {
@@ -431,8 +432,10 @@ HERO STYLES
         .hero__container_landing h3 ul li:nth-child(1):after, .hero__container_landing h3 ul li:nth-child(2):after {
           content: " • ";
           color: #8FA5BC; }
+  .hero__container_landing p {
+    font-size: 1.3em; }
   .hero__container_landing .hero__content {
-    height: 750px; }
+    height: 550px; }
     .hero__container_landing .hero__content_text {
       background: -webkit-linear-gradient(0deg, #293F56, #456990);
       background: -moz-linear-gradient(0deg, #293F56, #456990);
