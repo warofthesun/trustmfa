@@ -390,5 +390,16 @@ function display_custom_post_type(){
     return $string;
 }
 
+/* EDIT PASSWORD PROTECTED LANGUAGE */
+add_filter( 'the_password_form', 'trustmfa_password_form' );
+function trustmfa_password_form( $output ) {
+	$output = str_replace(
+		'This content is password protected. To view it please enter your password below:',
+		'To simplify your login process, you now only need to enter your password. Your password remains the same as the one you were previously provided.',
+		$output
+	);
+
+	return $output;
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
