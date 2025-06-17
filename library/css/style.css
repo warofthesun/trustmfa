@@ -1889,6 +1889,7 @@ Buttons and such
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea {
   border: 1px solid #A69E3F; }
 
