@@ -1972,7 +1972,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 4.5em;
+  font-size: 3.5em;
   line-height: .9em;
   font-family: "DM Serif Text", "Georgia", Cambria, Times New Roman, Times, serif;
   color: #A2B4C7; }
@@ -2155,7 +2155,7 @@ POSTS & CONTENT STYLES
   position: relative;
   z-index: 99; }
 .hero__container_landing h1 {
-  font-size: 3.5em;
+  font-size: 2.5em;
   margin-top: 0;
   margin-bottom: 0; }
   .hero__container_landing h1 span {
@@ -2166,7 +2166,8 @@ POSTS & CONTENT STYLES
     font-size: .4em;
     line-height: 1.1; }
 .hero__container_landing h3 {
-  margin-top: 0; }
+  margin-top: 0;
+  font-size: 1.5em; }
   .hero__container_landing h3 ul {
     font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0; }
@@ -2697,13 +2698,21 @@ article {
 .resources {
   columns: 2; }
   .resources .resourse__item .resource__link {
-    text-decoration: none;
-    display: block; }
+    text-decoration: underline;
+    display: block;
+    color: #293F56; }
+    .resources .resourse__item .resource__link:hover {
+      color: #827D2E; }
+      .resources .resourse__item .resource__link:hover .h4 {
+        border-bottom: 2px solid #D3CA83; }
     .resources .resourse__item .resource__link .h4 {
       line-height: 1;
       display: inline-block;
       margin-bottom: 0.25em;
-      margin-left: 0.25em; }
+      margin-left: 0.25em;
+      font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      border-bottom: 2px solid #7D96B1; }
   .resources .resourse__item h2 {
     margin-top: 1em; }
   .resources .resourse__item .resource__description {
@@ -2716,13 +2725,21 @@ article {
   .forms__sidebar {
     columns: 1; }
   .forms .form__item .form__link {
-    text-decoration: none;
-    display: block; }
-    .forms .form__item .form__link h4 {
+    text-decoration: underline;
+    display: block;
+    color: #293F56; }
+    .forms .form__item .form__link:hover {
+      color: #827D2E; }
+      .forms .form__item .form__link:hover .h4, .forms .form__item .form__link:hover h4 {
+        border-bottom: 2px solid #D3CA83; }
+    .forms .form__item .form__link .h4, .forms .form__item .form__link h4 {
       line-height: 1;
       display: inline-block;
       margin-bottom: 0.25em;
-      margin-left: 0.25em; }
+      margin-left: 0.25em;
+      font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      border-bottom: 2px solid #7D96B1; }
   .forms .form__item h2 {
     margin-top: 1em; }
   .forms .form__item .form__description {

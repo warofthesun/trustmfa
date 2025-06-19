@@ -169,7 +169,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 4.5em;
+	font-size: 3.5em;
 	line-height: .9em;
 	font-family: $serif;
 	color: $primary-100;
@@ -460,7 +460,7 @@ POSTS & CONTENT STYLES
 
 		&_landing {
 			h1 {
-				font-size: 3.5em;
+				font-size: 2.5em;
 				margin-top: 0;
 				margin-bottom: 0;
 
@@ -476,6 +476,7 @@ POSTS & CONTENT STYLES
 
 			h3 {
 				margin-top: 0;
+				font-size: 1.5em;
 				ul {
 				font-family: $sans-serif;
 				margin:0;
@@ -1314,13 +1315,25 @@ article {
 	.resourse__item {
 		
 		.resource__link {
-			text-decoration: none;
+			text-decoration: underline;
 			display: block;
+			color: $primary-700;
+
+			&:hover {
+				color: $secondary-600;
+
+				.h4 {
+					border-bottom: 2px solid $secondary-300;
+				}
+			}
 			.h4 {
 				line-height: 1;
 				display: inline-block;
 				margin-bottom: $spacing-xs;
 				margin-left: $spacing-xs;
+				font-family: $sans-serif;
+				font-weight: 500;
+				border-bottom: 2px solid $primary-300;
 			}
 		}
 
@@ -1349,14 +1362,26 @@ article {
 	.form__item {
 		
 		.form__link {
-			text-decoration: none;
+			text-decoration: underline;
 			display: block;
-			
-			h4 {
+			color: $primary-700;
+
+			&:hover {
+				color: $secondary-600;
+
+				.h4, h4 {
+					border-bottom: 2px solid $secondary-300;
+				}
+			}
+
+			.h4, h4 {
 				line-height: 1;
 				display: inline-block;
 				margin-bottom: $spacing-xs;
 				margin-left: $spacing-xs;
+				font-family: $sans-serif;
+				font-weight: 500;
+				border-bottom: 2px solid $primary-300;
 			}
 		}
 
