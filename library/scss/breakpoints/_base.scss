@@ -1348,7 +1348,9 @@ article {
 
 	&__sidebar {
 		columns: 1;
-
+		.form__link h4 {
+			font-size: 1.2em;
+		}
 	}
 
 	.form__item {

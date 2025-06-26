@@ -2722,6 +2722,8 @@ article {
   padding-top: 2em; }
   .forms__sidebar {
     columns: 1; }
+    .forms__sidebar .form__link h4 {
+      font-size: 1.2em; }
   .forms .form__item {
     display: block;
     padding-bottom: 1em; }
