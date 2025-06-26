@@ -1,19 +1,3 @@
-<?php
-/*
- * CUSTOM POST TYPE TEMPLATE
- *
- * This is the custom post type post template. If you edit the post type name, you've got
- * to change the name of this template to reflect that name change.
- *
- * For Example, if your custom post type is "register_post_type( 'bookmarks')",
- * then your single template should be single-bookmarks.php
- *
- * Be aware that you should rename 'custom_cat' and 'custom_tag' to the appropiate custom
- * category and taxonomy slugs, or this template will not finish to load properly.
- *
- * For more info: http://codex.wordpress.org/Post_Type_Templates
-*/
-?>
 <!--single-form-->
 <?php get_header(); ?>
 
@@ -30,17 +14,19 @@
 								<header class="article-header">
 
 									<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
+									<?php if(get_field('form_description')) : ?>
+										<div class="form__description"><?php the_field('form_description'); ?></div>
+									<?php endif; ?>
+									<?php if(get_field('link_to_downloadable_pdf')) : ?>
+										<a href="<?php the_field('link_to_downloadable_pdf'); ?>" target="_new">Download PDF</a>
+									
+									<?php if (get_field('form_code')) : ?> or fill out the form below <?php endif; ?>
+										<?php endif; ?>
 									
 
 								</header>
 
 								<section class="entry-content ">
-
-									<?php if(get_field('form_description')) : ?>
-										<div class="form__description"><?php the_field('form_description'); ?></div><?php endif; ?>
-										<? if(get_field('link_to_downloadable_pdf')) : ?>
-											<a href="<?php the_field('link_to_downloadable_pdf'); ?>" target="_new">Download PDF</a>
-										<?php endif; ?>
 
 									<?php $form = get_field('form_code'); echo do_shortcode($form); ?>
 

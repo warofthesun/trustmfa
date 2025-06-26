@@ -16,8 +16,7 @@ $query = new WP_Query( [
 
                     <div class="form__item">
                         <a href="<?php the_permalink(); ?>" class="form__link"><h4><?php the_title(); ?></h4></a>
-                        <?php if(get_field('form_description')) : ?><div class="form__description"><?php the_field('form_description');?></div--><?php endif; ?>
-                        </div>
+                    </div>
 
                 <?php endwhile; ?>
 
