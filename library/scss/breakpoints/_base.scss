@@ -1457,6 +1457,22 @@ input[type="submit"], input[type="file"], #wp-submit {
 	.grid {
 		margin-bottom: $spacing-xl;
 
+		.mb0 {
+			margin-bottom: 0;
+
+			textarea {
+				margin-bottom: 0;
+			}
+		}
+
+		.mb1 {
+			margin-bottom: 1em;
+		}
+
+		.mb2 {
+			margin-bottom: 1em;
+		}
+
 		&__row {
 			display: flex;
 			justify-content: space-evenly;
@@ -1464,6 +1480,43 @@ input[type="submit"], input[type="file"], #wp-submit {
 
 		&__column {
 			width: 100%;
+
+			&_flex-item {
+				display: flex;
+
+				&.column_header {
+					background-color: $primary-700;
+					color: $white;
+					margin-bottom: $spacing-md;
+					padding: $spacing-sm;
+					text-align: center;
+					font-weight: 700;
+					justify-content: center;
+					font-size: .8em;
+					line-height: 1;
+				}
+
+				input[type="text"], input[type="date"] {
+					border-radius: 0;
+					margin-bottom: 0;
+				}
+				p {
+					margin: 0;
+				}
+
+				&.h40 {
+					height: 40px;
+				}
+
+				&.h100per {
+					height: 100%;
+				}
+
+				&.align-center {
+					align-items: center;
+				}
+			}
+
 
 			&_item {
 				height: 40px;
