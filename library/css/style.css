@@ -2794,7 +2794,8 @@ article {
     justify-content: space-evenly; }
   .wpcf7-form .grid__column {
     width: 100%;
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
     .wpcf7-form .grid__column_flex-item {
       display: flex; }
       .wpcf7-form .grid__column_flex-item.column_header {
