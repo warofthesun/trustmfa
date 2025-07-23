@@ -1421,6 +1421,10 @@ input[type="submit"], input[type="file"], #wp-submit {
 
 	textarea {
 		max-width: 400px;
+
+		&.mw800 {
+			max-width: 800px;
+		}
 	}
 
 	label {
@@ -1480,6 +1484,7 @@ input[type="submit"], input[type="file"], #wp-submit {
 
 		&__column {
 			width: 100%;
+			display: flex;
 
 			&_flex-item {
 				display: flex;
@@ -1513,6 +1518,14 @@ input[type="submit"], input[type="file"], #wp-submit {
 				}
 
 				&.align-center {
+					align-items: center;
+				}
+
+				&.align-right {
+					align-items: right;
+				}
+
+				&.valign-middle {
 					align-items: center;
 				}
 			}
@@ -1557,6 +1570,24 @@ input[type="submit"], input[type="file"], #wp-submit {
 					background: rgba($white, .85);
 				}
 			}
+		}
+
+		&.row-highlight__even {
+			
+				.grid__row {
+					padding-left: 1em;
+
+					&:nth-child(even) {
+					 background: $grey-50;
+
+						input[type="text"] {
+							background-color: rgba($white, .55);
+						}
+					}
+				}
+				
+				
+			
 		}
 	}
 
