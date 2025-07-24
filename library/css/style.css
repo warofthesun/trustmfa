@@ -2754,6 +2754,8 @@ article {
 .entry-content .form__description {
   margin-bottom: 1em; }
 
+.wpcf7-form .wpcf7-acceptance .wpcf7-list-item {
+  margin: 0; }
 .wpcf7-form fieldset.hidden-fields-container {
   border: 0px; }
 .wpcf7-form .codedropz-upload-inner h5 {
@@ -2761,6 +2763,8 @@ article {
 .wpcf7-form input[type="date"] {
   display: flex;
   max-width: 200px; }
+.wpcf7-form input[type="text"].mw250 {
+  width: 250px; }
 .wpcf7-form textarea {
   max-width: 400px; }
   .wpcf7-form textarea.mw800 {

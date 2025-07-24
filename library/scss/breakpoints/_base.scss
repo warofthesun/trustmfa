@@ -1406,6 +1406,8 @@ input[type="submit"], input[type="file"], #wp-submit {
 
 .wpcf7-form {
 
+	.wpcf7-acceptance .wpcf7-list-item {margin:0;}
+
 	fieldset.hidden-fields-container {border: 0px;}
 
 	.codedropz-upload-inner {
@@ -1417,6 +1419,12 @@ input[type="submit"], input[type="file"], #wp-submit {
 	input[type="date"] {
 		display: flex;
 		max-width: 200px;
+	}
+
+	input[type="text"] {
+		&.mw250 {
+			width: 250px;
+		}
 	}
 
 	textarea {
